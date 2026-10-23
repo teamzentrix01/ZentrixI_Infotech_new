@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS leads (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
+  service TEXT,
+  message TEXT NOT NULL,
+  source TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS projects (
+  id SERIAL PRIMARY KEY,
+  slug TEXT UNIQUE NOT NULL,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  summary TEXT NOT NULL,
+  body TEXT NOT NULL DEFAULT '',
+  live_url TEXT,
+  featured BOOLEAN NOT NULL DEFAULT false,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS posts (
+  id SERIAL PRIMARY KEY,
+  slug TEXT UNIQUE NOT NULL,
+  title TEXT NOT NULL,
+  excerpt TEXT NOT NULL,
+  body TEXT NOT NULL,
+  published BOOLEAN NOT NULL DEFAULT true,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS testimonials (
+  id SERIAL PRIMARY KEY,
+  quote TEXT NOT NULL,
+  author TEXT NOT NULL,
+  role TEXT NOT NULL
+);

@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/images/ClashDisplay_Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+.dark {
+  --background: 13, 13, 13;
+  --logo-bg: 250, 250, 250;
+  --nav-bg: 27, 27, 27;
+  --nav-border: 53, 53, 53;
+  --nav-text: 255, 255, 255;
+  --nav-text-hover: 131, 86, 251;
+  --nav-btn-text: 255, 255, 255;
+  --nav-btns-bg: 13, 13, 13;
+  --text-heading: 255, 255, 255;
+  --text-description: 173, 173, 173;
+  --border: 53, 53, 53;
+  --badge-bg: 20, 20, 20;
+  --badge-text: 250, 250, 250;
+  --service-btn-bg: 29, 29, 29;
+  --card-bg: 17, 17, 17;
+  --work-icon-bg: 30, 30, 30;
+  --work-icon-text: 255, 255, 255;
+  --footer-icon-text: 193, 193, 193;
+  --box-shadow: none;
+  --cursor-bg: 131, 86, 251;
+  --cursor-text: 255, 255, 255;
+  --badge-border: 155, 138, 201;
+  --reveal-ease: cubic-bezier(.21, .47, .32, .98);
+  color-scheme: dark;
+}
+
+.light {
+  --background: 250, 250, 250;
+  --logo-bg: 131, 86, 251;
+  --nav-bg: 245, 245, 245;
+  --nav-border: 200, 200, 200;
+  --nav-text: 13, 13, 13;
+  --nav-text-hover: 89, 31, 183;
+  --nav-btn-text: 255, 255, 255;
+  --nav-btns-bg: 225, 225, 225;
+  --text-heading: 33, 33, 33;
+  --text-description: 73, 73, 73;
+  --border: 200, 200, 200;
+  --badge-bg: 255, 255, 255;
+  --badge-text: 13, 13, 13;
+  --service-btn-bg: 235, 235, 235;
+  --card-bg: 255, 255, 255;
+  --work-icon-bg: 235, 235, 235;
+  --work-icon-text: 255, 255, 255;
+  --footer-icon-text: 33, 33, 33;
+  --box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+  --cursor-bg: 131, 86, 251;
+  --cursor-text: 255, 255, 255;
+  --badge-border: 155, 138, 201;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--text-heading));
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Techwara-style Exact Intro Animation */
+@keyframes introDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes introFill {
+  to {
+    fill-opacity: 1;
+    stroke-opacity: 0;
+  }
+}
+
+@keyframes introOverlayOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.intro-overlay {
+  --intro-bg: rgb(var(--background));
+  z-index: 100000;
+  justify-content: center;
+  align-items: center;
+  animation: 0.4s ease-out 1.6s forwards introOverlayOut;
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background-color: var(--intro-bg);
+  pointer-events: none;
+}
+
+.intro-backdrop {
+  background-color: var(--intro-bg);
+  position: absolute;
+  inset: 0;
+}
+
+.intro-logo {
+  will-change: transform;
+  color: #fff;
+  width: min(85vw, 440px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light .intro-logo {
+  color: #070709;
+}
+
+.intro-variant {
+  display: block;
+}
+
+.intro-variant-light {
+  display: none;
+}
+
+.light .intro-variant-light {
+  display: block;
+}
+
+.light .intro-variant-dark {
+  display: none;
+}
+
+.intro-path {
+  fill: var(--fill, currentColor);
+  fill-opacity: 0;
+  stroke: currentColor;
+  stroke-width: 1.35px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1px;
+  animation: introDraw 0.4s cubic-bezier(0.45, 0, 0.55, 1) calc(var(--i) * 65ms) forwards,
+             introFill 0.3s ease-in calc(0.3s + var(--i) * 45ms) forwards;
+}
+
+html:has(.intro-overlay) {
+  overflow-x: clip;
+}
+
+
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background-color: #8356FB;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease-out, opacity 0.25s ease-out, width 0.2s, height 0.2s;
+  will-change: transform, opacity;
+}
+
+/* Badges & Glowing */
+.badge-glow {
+  box-shadow: inset 0 0 10px 6px #8363ff66;
+}
+
+/* CTA Buttons */
+.CTA-Button {
+  background: linear-gradient(102.88deg, #8356fb 5.35%, #946cff 43.55%, #7953df 85.78%);
+  transition: all 0.3s ease;
+}
+
+.CTA-Button:hover {
+  background: linear-gradient(223.63deg, #5b2bda -16.4%, #a584ff 45.98%, #5b2bda 114.93%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(131, 86, 251, 0.4);
+}
+
+/* Mask Gradients */
+.mask-gradient-x {
+  -webkit-mask-image: linear-gradient(90deg, #0000 0%, #000 8% 92%, #0000 100%);
+  mask-image: linear-gradient(90deg, #0000 0%, #000 8% 92%, #0000 100%);
+}
+
+@media (min-width: 768px) {
+  .mask-gradient-x {
+    -webkit-mask-image: linear-gradient(90deg, #0000 0%, #000 12% 88%, #0000 100%);
+    mask-image: linear-gradient(90deg, #0000 0%, #000 12% 88%, #0000 100%);
+  }
+}
+
+.testimonials-mask-y {
+  -webkit-mask-image: linear-gradient(#0000 0%, #0000000d 4%, #0000004d 10%, #000000b3 18%, #000 28% 72%, #000000b3 82%, #0000004d 90%, #0000000d 96%, #0000 100%);
+  mask-image: linear-gradient(#0000 0%, #0000000d 4%, #0000004d 10%, #000000b3 18%, #000 28% 72%, #000000b3 82%, #0000004d 90%, #0000000d 96%, #0000 100%);
+}
+
+.testimonials-mask-x {
+  -webkit-mask-image: linear-gradient(90deg, #0000 0%, #000 10% 90%, #0000 100%);
+  mask-image: linear-gradient(90deg, #0000 0%, #000 10% 90%, #0000 100%);
+}
+
+/* Spotlight Card effect */
+.spotlight-card {
+  position: relative;
+  background: linear-gradient(rgb(var(--card-bg)), rgb(var(--card-bg))) padding-box,
+              radial-gradient(circle 350px at var(--mouse-x, -999px) var(--mouse-y, -999px), #8356fb 0%, #946cffd9 25%, #7953df59 60%, rgba(var(--border), 0.7) 100%) border-box !important;
+  border: 1px solid transparent !important;
+}
+
+.spotlight-line {
+  background: linear-gradient(rgb(var(--background)), rgb(var(--background))) padding-box,
+              radial-gradient(circle 400px at var(--mouse-x, -999px) var(--mouse-y, -999px), #8356fb 0%, #946cffd9 25%, #7953df59 60%, rgba(var(--border), 0.7) 100%) border-box !important;
+  border-color: transparent !important;
+}
+
+.spotlight-line-cardbg {
+  background: linear-gradient(rgb(var(--card-bg)), rgb(var(--card-bg))) padding-box,
+              radial-gradient(circle 400px at var(--mouse-x, -999px) var(--mouse-y, -999px), #8356fb 0%, #946cffd9 25%, #7953df59 60%, rgba(var(--border), 0.7) 100%) border-box !important;
+  border-color: transparent !important;
+}
+
+.border-border {
+  border-color: rgb(var(--border));
+}
+
+
+.light h1.font-bold,
+.light h2.font-bold,
+.light h3.font-bold {
+  font-weight: 750;
+}
+
+.light .spotlight-card,
+.light .sl-serviceCard,
+.light .shadow-default,
+.light .sl-benefits-5 {
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+}
+
+.light .spotlight-card:hover,
+.light .sl-serviceCard:hover,
+.light .shadow-default:hover {
+  box-shadow: 0 20px 40px -8px rgba(131, 86, 251, 0.15), 0 6px 16px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .spotlight-card,
+.dark .sl-serviceCard,
+.dark .shadow-default {
+  box-shadow: none;
+}
+
+/* Corner art & reveals */
+.corner-art {
+  animation: cornerArtIn 1s var(--reveal-ease) 0.1s backwards;
+}
+
+.reveal-up {
+  animation: revealUp var(--reveal-duration, 0.65s) cubic-bezier(.21, .47, .32, .98) var(--reveal-delay, 0s) backwards;
+}
+
+.scroll-reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--reveal-duration, 0.7s) var(--reveal-ease) var(--reveal-delay, 0s),
+              transform var(--reveal-duration, 0.7s) var(--reveal-ease) var(--reveal-delay, 0s);
+}
+
+@keyframes cornerArtIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--corner-from-x, 0), -20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, var(--reveal-y, 25px), 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Infinite Scrolling speeds */
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 30s linear infinite;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll-up {
+  animation: scrollUp 24s linear infinite;
+}
+
+.animate-scroll-up:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll-down {
+  animation: scrollDown 24s linear infinite;
+}
+
+.animate-scroll-down:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 25s linear infinite;
+}
+
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}

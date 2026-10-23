@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8356FB"/>
+      <stop offset="55%" stop-color="#946CFF"/>
+      <stop offset="100%" stop-color="#5B2BDA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#946CFF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#946CFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0D0D0D"/>
+  <ellipse cx="960" cy="120" rx="520" ry="360" fill="url(#glow)"/>
+  <line x1="300" y1="200" x2="520" y2="130" stroke="url(#g)" stroke-opacity="0.5" stroke-width="2"/>
+  <line x1="520" y1="130" x2="740" y2="240" stroke="url(#g)" stroke-opacity="0.5" stroke-width="2"/>
+  <line x1="300" y1="200" x2="430" y2="380" stroke="url(#g)" stroke-opacity="0.5" stroke-width="2"/>
+  <line x1="430" y1="380" x2="660" y2="450" stroke="url(#g)" stroke-opacity="0.5" stroke-width="2"/>
+  <line x1="740" y1="240" x2="880" y2="360" stroke="url(#g)" stroke-opacity="0.5" stroke-width="2"/>
+  <line x1="660" y1="450" x2="880" y2="360" stroke="url(#g)" stroke-opacity="0.5" stroke-width="2"/>
+  <line x1="520" y1="130" x2="430" y2="380" stroke="url(#g)" stroke-opacity="0.5" stroke-width="2"/>
+  <circle cx="300" cy="200" r="24" fill="url(#g)"/>
+  <circle cx="520" cy="130" r="16" fill="url(#g)"/>
+  <circle cx="740" cy="240" r="24" fill="url(#g)"/>
+  <circle cx="430" cy="380" r="16" fill="url(#g)"/>
+  <circle cx="660" cy="450" r="24" fill="url(#g)"/>
+  <circle cx="880" cy="360" r="16" fill="url(#g)"/>
+</svg>
