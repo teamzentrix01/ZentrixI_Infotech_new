@@ -1,19 +1,30 @@
 'use client';
 
 const clientLogos = [
-  { src: '/images/Logo_1.png', alt: 'Lineage Corporation logo' },
-  { src: '/images/Logo_2.png', alt: 'Auxilium logo' },
-  { src: '/images/Logo_3.png', alt: 'Technolkar logo' },
-  { src: '/images/Logo_4.png', alt: 'SuperOatMeals logo' },
-  { src: '/images/Logo_5.png', alt: 'FITLOC logo' },
-  { src: '/images/Logo_6.png', alt: 'Sawasheri Brothers logo' },
+  { src: '/images/clients/client_norm_01.png', alt: 'Client logo 1' },
+  { src: '/images/clients/client_norm_02.png', alt: 'Alluring logo' },
+  { src: '/images/clients/client_norm_03.png', alt: 'Balprada logo' },
+  { src: '/images/clients/client_norm_04.png', alt: 'Buyzaar logo' },
+  { src: '/images/clients/client_norm_05.png', alt: 'Kailash Fort Resort logo' },
+  { src: '/images/clients/client_norm_06.png', alt: 'Herbsfox logo' },
+  { src: '/images/clients/client_norm_07.png', alt: 'IMA logo' },
+  { src: '/images/clients/client_norm_08.png', alt: 'KD Edu logo' },
+  { src: '/images/clients/client_norm_09.png', alt: 'Client logo 10' },
+  { src: '/images/clients/client_norm_10.png', alt: 'Client logo 11' },
+  { src: '/images/clients/client_norm_11.png', alt: 'Client logo 12' },
+  { src: '/images/clients/client_norm_12.png', alt: 'MT Boss logo' },
+  { src: '/images/clients/client_norm_13.png', alt: 'PS logo' },
+  { src: '/images/clients/client_norm_14.png', alt: 'Southern Palate logo' },
+  { src: '/images/clients/client_norm_15.png', alt: 'Suzuki logo' },
+  { src: '/images/clients/client_norm_16.png', alt: 'Vasterior logo' },
+  { src: '/images/clients/client_norm_17.png', alt: 'Client logo 19' },
 ];
 
 export default function ClientLogosMarquee() {
   return (
-    <div className="trustedSlider-5 w-full flex flex-col justify-center items-center my-6 sm:my-8 md:my-10 overflow-x-hidden">
-      {/* Header with ornamental flourish SVGs */}
-      <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 w-11/12 sm:w-9/12 md:w-8/12 lg:w-7/12 xl:max-w-[860px] px-2 select-none mb-6">
+    <div className="trustedSlider-5 w-full flex justify-center items-center my-6 sm:my-8 md:my-10 overflow-x-hidden">
+      <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 w-11/12 sm:w-9/12 md:w-8/12 lg:w-7/12 xl:max-w-[860px] px-2 select-none">
+        {/* Header with ornamental flourish SVGs */}
         <div className="flex items-center justify-center gap-3 sm:gap-4 text-textDescription/70 dark:text-textDescription/60">
           {/* Left Wing Flourish SVG */}
           <svg
@@ -52,50 +63,41 @@ export default function ClientLogosMarquee() {
             <path d="M24 15C29 15 34 18.5 37 18.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeOpacity="0.4"></path>
           </svg>
         </div>
-      </div>
 
-      {/* Continuous reverse marquee (animated to right) */}
-      <div className="w-full overflow-hidden mask-gradient-x flex select-none py-2">
-        <div className="flex shrink-0 items-center animate-marquee-right gap-8 sm:gap-12 md:gap-16 pr-8 sm:pr-12 md:pr-16">
-          {clientLogos.map((logo, i) => (
-            <div
-              key={`logo1-${i}`}
-              className="shrink-0 flex items-center justify-center h-8 sm:h-10 md:h-12 w-28 sm:w-36 md:w-40 transition-opacity duration-300"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-75 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-60 dark:hover:opacity-100 transition-[opacity,filter] duration-300"
-                loading="lazy"
-              />
-            </div>
-          ))}
-          {clientLogos.map((logo, i) => (
-            <div
-              key={`logo2-${i}`}
-              className="shrink-0 flex items-center justify-center h-8 sm:h-10 md:h-12 w-28 sm:w-36 md:w-40 transition-opacity duration-300"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-75 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-60 dark:hover:opacity-100 transition-[opacity,filter] duration-300"
-                loading="lazy"
-              />
-            </div>
-          ))}
-          {clientLogos.map((logo, i) => (
-            <div
-              key={`logo3-${i}`}
-              className="shrink-0 flex items-center justify-center h-8 sm:h-10 md:h-12 w-28 sm:w-36 md:w-40 transition-opacity duration-300"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-75 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-60 dark:hover:opacity-100 transition-[opacity,filter] duration-300"
-                loading="lazy"
-              />
-            </div>
-          ))}
+        {/* Continuous reverse marquee (animated to right) */}
+        <div className="group w-full overflow-hidden mask-gradient-x flex select-none py-2">
+          <div className="flex shrink-0 items-center animate-marquee-right group-hover:[animation-play-state:paused] hover:[animation-play-state:paused] gap-8 sm:gap-12 md:gap-16 pr-8 sm:pr-12 md:pr-16">
+            {clientLogos.map((logo, i) => (
+              <div
+                key={`logo1-${i}`}
+                className="shrink-0 flex items-center justify-center h-8 sm:h-10 md:h-12 w-28 sm:w-36 md:w-40"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-75 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-60 dark:hover:brightness-100 transition-[opacity,filter] duration-300"
+                  loading="lazy"
+                  style={{ imageRendering: '-webkit-optimize-contrast' }}
+                />
+              </div>
+            ))}
+          </div>
+          <div aria-hidden="true" className="flex shrink-0 items-center animate-marquee-right group-hover:[animation-play-state:paused] hover:[animation-play-state:paused] gap-8 sm:gap-12 md:gap-16 pr-8 sm:pr-12 md:pr-16">
+            {clientLogos.map((logo, i) => (
+              <div
+                key={`logo2-${i}`}
+                className="shrink-0 flex items-center justify-center h-8 sm:h-10 md:h-12 w-28 sm:w-36 md:w-40"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-75 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-60 dark:hover:brightness-100 transition-[opacity,filter] duration-300"
+                  loading="lazy"
+                  style={{ imageRendering: '-webkit-optimize-contrast' }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

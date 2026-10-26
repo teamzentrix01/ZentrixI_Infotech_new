@@ -48,7 +48,7 @@ module.exports = {
       },
       animation: {
         'marquee-left': 'marqueeLeft 35s linear infinite',
-        'marquee-right': 'marqueeRight 35s linear infinite',
+        'marquee-right': 'marqueeRight 30s linear infinite',
         'scroll-up': 'scrollUp 28s linear infinite',
         'scroll-down': 'scrollDown 28s linear infinite',
         'scroll-left': 'scrollLeft 30s linear infinite',
@@ -61,7 +61,7 @@ module.exports = {
           '100%': { transform: 'translate(-50%)' },
         },
         marqueeRight: {
-          '0%': { transform: 'translate(-50%)' },
+          '0%': { transform: 'translate(-100%)' },
           '100%': { transform: 'translate(0, 0)' },
         },
         scrollUp: {
