@@ -1,23 +1,25 @@
 'use client';
 
 const clientLogos = [
-  { src: '/images/clients/client_norm_01.png', alt: 'Client logo 1' },
   { src: '/images/clients/client_norm_02.png', alt: 'Alluring logo' },
   { src: '/images/clients/client_norm_03.png', alt: 'Balprada logo' },
   { src: '/images/clients/client_norm_04.png', alt: 'Buyzaar logo' },
-  { src: '/images/clients/client_norm_05.png', alt: 'Kailash Fort Resort logo' },
+  { src: '/images/clients/client_norm_05.png', alt: 'Kailash Fort Resort logo', className: 'scale-[1.3]' },
   { src: '/images/clients/client_norm_06.png', alt: 'Herbsfox logo' },
-  { src: '/images/clients/client_norm_07.png', alt: 'IMA logo' },
-  { src: '/images/clients/client_norm_08.png', alt: 'KD Edu logo' },
+  { src: '/images/clients/client_norm_07.png', alt: 'IMA logo', className: 'scale-[1.3]' },
   { src: '/images/clients/client_norm_09.png', alt: 'Client logo 10' },
   { src: '/images/clients/client_norm_10.png', alt: 'Client logo 11' },
   { src: '/images/clients/client_norm_11.png', alt: 'Client logo 12' },
   { src: '/images/clients/client_norm_12.png', alt: 'MT Boss logo' },
-  { src: '/images/clients/client_norm_13.png', alt: 'PS logo' },
+  { src: '/images/clients/client_norm_13.png', alt: 'PS Decor & Weddings logo', className: 'scale-[1.3]' },
   { src: '/images/clients/client_norm_14.png', alt: 'Southern Palate logo' },
   { src: '/images/clients/client_norm_15.png', alt: 'Suzuki logo' },
   { src: '/images/clients/client_norm_16.png', alt: 'Vasterior logo' },
   { src: '/images/clients/client_norm_17.png', alt: 'Client logo 19' },
+  { src: '/images/clients/client_norm_18.png', alt: 'Intirio Trade & Construction logo' },
+  { src: '/images/clients/client_norm_19.png', alt: 'SS Metals logo', className: 'scale-[1.2]' },
+  { src: '/images/clients/client_norm_20.png', alt: 'Indraprastha Gas Limited logo', className: 'scale-[1.15]' },
+  { src: '/images/clients/client_norm_21.png', alt: 'Jyoti Hydraulic logo' },
 ];
 
 export default function ClientLogosMarquee() {
@@ -70,12 +72,12 @@ export default function ClientLogosMarquee() {
             {clientLogos.map((logo, i) => (
               <div
                 key={`logo1-${i}`}
-                className="shrink-0 flex items-center justify-center h-8 sm:h-10 md:h-12 w-28 sm:w-36 md:w-40"
+                className="shrink-0 flex items-center justify-center h-9 sm:h-11 md:h-14 w-28 sm:w-36 md:w-44"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-75 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-60 dark:hover:brightness-100 transition-[opacity,filter] duration-300"
+                  className={`max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-80 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-75 dark:hover:opacity-100 dark:hover:brightness-110 transition-[opacity,filter,transform] duration-300 ${logo.className || ''}`}
                   loading="lazy"
                   style={{ imageRendering: '-webkit-optimize-contrast' }}
                 />
@@ -86,12 +88,12 @@ export default function ClientLogosMarquee() {
             {clientLogos.map((logo, i) => (
               <div
                 key={`logo2-${i}`}
-                className="shrink-0 flex items-center justify-center h-8 sm:h-10 md:h-12 w-28 sm:w-36 md:w-40"
+                className="shrink-0 flex items-center justify-center h-9 sm:h-11 md:h-14 w-28 sm:w-36 md:w-44"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-75 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-60 dark:hover:brightness-100 transition-[opacity,filter] duration-300"
+                  className={`max-h-full max-w-full w-auto h-auto object-contain brightness-[0.35] opacity-80 hover:opacity-100 hover:brightness-[0.2] dark:brightness-100 dark:opacity-75 dark:hover:opacity-100 dark:hover:brightness-110 transition-[opacity,filter,transform] duration-300 ${logo.className || ''}`}
                   loading="lazy"
                   style={{ imageRendering: '-webkit-optimize-contrast' }}
                 />
