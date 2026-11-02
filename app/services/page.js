@@ -2,6 +2,59 @@
 import Link from 'next/link';
 import SubpageFAQ from '@/components/SubpageFAQ';
 
+const servicesList = [
+  {
+    slug: 'web-development',
+    title: 'Web\nDevelopment',
+    features: [
+      'Fully responsive websites',
+      'Optimized for speed and SEO',
+      'Scalable solutions for future growth',
+      'Website Maintenance',
+    ],
+  },
+  {
+    slug: 'app-development',
+    title: 'App\nDevelopment',
+    features: [
+      'Native & cross-platform apps',
+      'Intuitive user interfaces',
+      'Performance optimization',
+      'Ongoing support & updates',
+    ],
+  },
+  {
+    slug: 'ui-ux-design',
+    title: 'UI/UX\nDesign',
+    features: [
+      'User research & wireframing',
+      'High-fidelity prototypes',
+      'Design system creation',
+      'Usability testing',
+    ],
+  },
+  {
+    slug: 'video-editing',
+    title: 'Video\nEditing',
+    features: [
+      'Product & promo edits',
+      'Motion graphics',
+      'Sound design & mixing',
+      'Cut per platform',
+    ],
+  },
+  {
+    slug: 'branding',
+    title: 'Branding',
+    features: [
+      'Logo & identity design',
+      'Typography & colour systems',
+      'Written brand guidelines',
+      'Files for web, print & signage',
+    ],
+  },
+];
+
 const servicesFaqs = [
   {
     "q": "How much does a website cost in India?",
@@ -52,11 +105,237 @@ export default function ServicesPage() {
       />
 
       <div className="w-full relative z-10 flex flex-col items-center">
-        <div className="w-full flex flex-col items-center mt-36 mb-16 xxxs:mt-20 xxxs:mb-8 xxs:mt-24 xxs:mb-10 sm:mt-28 sm:mb-12 lg:mt-32 xl:mt-36 xl:mb-16 2xl:mt-40 z-10"><div className="w-10/12 max-w-[860px] flex flex-col items-start text-left sm:items-center sm:text-center gap-3.5 sm:gap-4 xxxs:w-11/12 xxxs:gap-2.5"><div className="reveal-up " style={{ '--reveal-delay': '0s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}><div className="badge-glow self-start sm:self-auto flex flex-row justify-center gap-1.5 items-center py-1.5 px-3.5 sm:py-2 sm:px-4 bg-badgeBG rounded-full text-badgeText border border-badgeBorder text-xs sm:text-sm lg:text-[12px] xl:text-sm 2xl:text-[16px] 2xl:px-6 2xl:py-4"><div className="flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-layers w-3.5 h-3.5 sm:w-3 sm:h-3 2xl:w-4 2xl:h-4 text-badgeText flex-shrink-0" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg></div><p>OUR SERVICES</p></div></div><div className="reveal-up " style={{ '--reveal-delay': '0.08s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}><h1 className="text-3xl xxs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight text-left sm:text-center">Here’s What We Can Do <span className="bg-headingGradient text-transparent bg-clip-text font-semibold inline-block ml-1.5 sm:ml-2">For You.</span></h1></div><div className="reveal-up " style={{ '--reveal-delay': '0.22999999999999998s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}><p className="font-bodyfont text-textDescription text-sm sm:text-lg lg:text-xl text-left sm:text-center max-w-[640px]">From websites and apps to custom software, we’re here to help you build a stronger digital presence and grow your business online.</p></div></div></div><div className="w-full flex flex-col items-center gap-5 xl:gap-5 2xl:gap-8 mb-24 xxxs:mb-14 xxs:mb-16 xs:mb-20 sm:mb-16 lg:mb-20 xl:mb-24 2xl:mb-28"><div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}><div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none"><div className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0"><img alt="Web Development" loading="lazy" decoding="async" data-nimg="fill" className="object-cover" style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }} sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, (max-width: 1727px) 28vw, 420px" srcSet="/images/ServiceBGDark.webp 256w, /images/ServiceBGDark.webp 384w, /images/ServiceBGDark.webp 640w, /images/ServiceBGDark.webp 750w, /images/ServiceBGDark.webp 828w, /images/ServiceBGDark.webp 1080w, /images/ServiceBGDark.webp 1200w, /images/ServiceBGDark.webp 1920w, /images/ServiceBGDark.webp 2048w, /images/ServiceBGDark.webp 3840w" src="/images/ServiceBGDark.webp"/><div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3"><h2 id="web-development" className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line">Web
-Development</h2></div></div><div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto"><div className="flex flex-col gap-2.5 xs:gap-3"><div className="flex flex-col gap-2.5 xs:gap-3"><p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">What&#x27;s Included</p><ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4"><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Fully responsive websites</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Optimized for speed and SEO</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Scalable solutions for future growth</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Website Maintenance</span></li></ul></div></div><div className="w-full pt-1.5 xs:pt-2 mt-auto"><a className="group/btn w-full block" aria-label="Book Our Service — Web Development" href="/contact?service=web-development&amp;source=service-card"><div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200"><p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">Book Our Service</p><div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></div></a></div></div></div><div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none"><div className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0"><img alt="App Development" loading="lazy" decoding="async" data-nimg="fill" className="object-cover" style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }} sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, (max-width: 1727px) 28vw, 420px" srcSet="/images/ServiceBGDark.webp 256w, /images/ServiceBGDark.webp 384w, /images/ServiceBGDark.webp 640w, /images/ServiceBGDark.webp 750w, /images/ServiceBGDark.webp 828w, /images/ServiceBGDark.webp 1080w, /images/ServiceBGDark.webp 1200w, /images/ServiceBGDark.webp 1920w, /images/ServiceBGDark.webp 2048w, /images/ServiceBGDark.webp 3840w" src="/images/ServiceBGDark.webp"/><div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3"><h2 id="app-development" className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line">App
-Development</h2></div></div><div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto"><div className="flex flex-col gap-2.5 xs:gap-3"><div className="flex flex-col gap-2.5 xs:gap-3"><p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">What&#x27;s Included</p><ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4"><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Native &amp; cross-platform apps</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Intuitive user interfaces</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Performance optimization</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Ongoing support &amp; updates</span></li></ul></div></div><div className="w-full pt-1.5 xs:pt-2 mt-auto"><a className="group/btn w-full block" aria-label="Book Our Service — App Development" href="/contact?service=app-development&amp;source=service-card"><div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200"><p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">Book Our Service</p><div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></div></a></div></div></div><div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none"><div className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0"><img alt="UI/UX Design" loading="lazy" decoding="async" data-nimg="fill" className="object-cover" style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }} sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, (max-width: 1727px) 28vw, 420px" srcSet="/images/ServiceBGDark.webp 256w, /images/ServiceBGDark.webp 384w, /images/ServiceBGDark.webp 640w, /images/ServiceBGDark.webp 750w, /images/ServiceBGDark.webp 828w, /images/ServiceBGDark.webp 1080w, /images/ServiceBGDark.webp 1200w, /images/ServiceBGDark.webp 1920w, /images/ServiceBGDark.webp 2048w, /images/ServiceBGDark.webp 3840w" src="/images/ServiceBGDark.webp"/><div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3"><h2 id="ui-ux-design" className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line">UI/UX
-Design</h2></div></div><div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto"><div className="flex flex-col gap-2.5 xs:gap-3"><div className="flex flex-col gap-2.5 xs:gap-3"><p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">What&#x27;s Included</p><ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4"><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">User research &amp; wireframing</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">High-fidelity prototypes</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Design system creation</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Usability testing</span></li></ul></div></div><div className="w-full pt-1.5 xs:pt-2 mt-auto"><a className="group/btn w-full block" aria-label="Book Our Service — UI/UX Design" href="/contact?service=ui-ux-design&amp;source=service-card"><div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200"><p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">Book Our Service</p><div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></div></a></div></div></div></div><div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0.15s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}><div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none"><div className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0"><img alt="Video Editing" loading="lazy" decoding="async" data-nimg="fill" className="object-cover" style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }} sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, (max-width: 1727px) 28vw, 420px" srcSet="/images/ServiceBGDark.webp 256w, /images/ServiceBGDark.webp 384w, /images/ServiceBGDark.webp 640w, /images/ServiceBGDark.webp 750w, /images/ServiceBGDark.webp 828w, /images/ServiceBGDark.webp 1080w, /images/ServiceBGDark.webp 1200w, /images/ServiceBGDark.webp 1920w, /images/ServiceBGDark.webp 2048w, /images/ServiceBGDark.webp 3840w" src="/images/ServiceBGDark.webp"/><div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3"><h2 id="video-editing" className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line">Video
-Editing</h2></div></div><div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto"><div className="flex flex-col gap-2.5 xs:gap-3"><div className="flex flex-col gap-2.5 xs:gap-3"><p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">What&#x27;s Included</p><ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4"><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Product &amp; promo edits</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Motion graphics</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Sound design &amp; mixing</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Cut per platform</span></li></ul></div></div><div className="w-full pt-1.5 xs:pt-2 mt-auto"><a className="group/btn w-full block" aria-label="Book Our Service — Video Editing" href="/contact?service=video-editing&amp;source=service-card"><div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200"><p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">Book Our Service</p><div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></div></a></div></div></div><div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none"><div className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0"><img alt="Branding" loading="lazy" decoding="async" data-nimg="fill" className="object-cover" style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }} sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, (max-width: 1727px) 28vw, 420px" srcSet="/images/ServiceBGDark.webp 256w, /images/ServiceBGDark.webp 384w, /images/ServiceBGDark.webp 640w, /images/ServiceBGDark.webp 750w, /images/ServiceBGDark.webp 828w, /images/ServiceBGDark.webp 1080w, /images/ServiceBGDark.webp 1200w, /images/ServiceBGDark.webp 1920w, /images/ServiceBGDark.webp 2048w, /images/ServiceBGDark.webp 3840w" src="/images/ServiceBGDark.webp"/><div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3"><h2 id="branding" className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line">Branding</h2></div></div><div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto"><div className="flex flex-col gap-2.5 xs:gap-3"><div className="flex flex-col gap-2.5 xs:gap-3"><p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">What&#x27;s Included</p><ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4"><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Logo &amp; identity design</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Typography &amp; colour systems</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Written brand guidelines</span></li><li className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs"><div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><span className="leading-tight">Files for web, print &amp; signage</span></li></ul></div></div><div className="w-full pt-1.5 xs:pt-2 mt-auto"><a className="group/btn w-full block" aria-label="Book Our Service — Branding" href="/contact?service=branding&amp;source=service-card"><div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200"><p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">Book Our Service</p><div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></div></a></div></div></div><div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none"><div className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-[1.2] sm:w-1/2 sm:basis-1/2 md:aspect-[1.2] min-h-[140px] xs:min-h-[160px] sm:min-h-0 flex-shrink-0 overflow-hidden flex flex-col justify-between bg-white dark:bg-white p-4 sm:p-5 lg:p-6 lg:w-full lg:basis-auto lg:flex-1 lg:min-h-[340px] xl:min-h-[360px] lg:aspect-auto z-0"><div className="z-10 max-w-[170px] xxs:max-w-[200px] xs:max-w-[220px] sm:max-w-[165px] md:max-w-[185px] lg:max-w-[260px] xl:max-w-[300px]"><p className="text-black font-headingfont font-extrabold text-xl xxs:text-2xl xs:text-2xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl leading-[1.15]">Have an Idea and wanna build a MVP ?</p></div><div className="absolute right-[-8px] bottom-[-8px] w-[160px] xxs:w-[190px] xs:w-[210px] sm:w-[155px] md:w-[175px] lg:w-[270px] xl:w-[310px] 2xl:w-[330px] h-auto pointer-events-none select-none"><img alt="Character working on laptop to build MVP" loading="lazy" width="600" height="600" decoding="async" data-nimg="1" className="w-full h-auto object-contain" style={{ color: 'transparent' }} srcSet="/images/mvp-character.webp 1x, /images/mvp-character.webp 2x" src="/images/mvp-character.webp"/></div></div><div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-6 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:py-2 sm:w-1/2 sm:basis-1/2 flex-1 sm:h-full xl:gap-6 lg:w-full lg:basis-auto lg:justify-between lg:flex-none lg:h-auto lg:my-0 lg:px-2 lg:pb-2"><p className="text-textDescription font-bodyfont text-xs xxs:text-sm sm:text-base lg:text-sm xl:text-base leading-relaxed">Turn your concept into a live product in just 14 days with our dedicated MVP sprint team.</p><div className="flex flex-col gap-2.5"><a className="group/btn h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200" href="/book"><p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">Book MVP Strategy Call</p><div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div></a><a href="https://wa.me/917815043780?text=Hi%20Zentrix Infotech,%20I%20have%20an%20idea%20and%20want%20to%20build%20an%20MVP." target="_blank" rel="noopener noreferrer" className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-center gap-2 px-3.5 sm:px-5 rounded-lg xs:rounded-xl bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-xs xs:text-sm sm:text-base transition-all duration-200 shadow-sm"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" className="w-3.5 h-3.5 xs:w-4 xs:h-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg><span className="mb-0.5">Chat on WhatsApp</span></a></div></div></div></div></div>
+        {/* Header Section */}
+        <div className="w-full flex flex-col items-center mt-36 mb-16 xxxs:mt-20 xxxs:mb-8 xxs:mt-24 xxs:mb-10 sm:mt-28 sm:mb-12 lg:mt-32 xl:mt-36 xl:mb-16 2xl:mt-40 z-10">
+          <div className="w-10/12 max-w-[860px] flex flex-col items-start text-left sm:items-center sm:text-center gap-3.5 sm:gap-4 xxxs:w-11/12 xxxs:gap-2.5">
+            <div className="reveal-up" style={{ '--reveal-delay': '0s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}>
+              <div className="badge-glow self-start sm:self-auto flex flex-row justify-center gap-1.5 items-center py-1.5 px-3.5 sm:py-2 sm:px-4 bg-badgeBG rounded-full text-badgeText border border-badgeBorder text-xs sm:text-sm lg:text-[12px] xl:text-sm 2xl:text-[16px] 2xl:px-6 2xl:py-4">
+                <div className="flex justify-center items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-layers w-3.5 h-3.5 sm:w-3 sm:h-3 2xl:w-4 2xl:h-4 text-badgeText flex-shrink-0" aria-hidden="true">
+                    <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path>
+                    <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path>
+                    <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path>
+                  </svg>
+                </div>
+                <p>OUR SERVICES</p>
+              </div>
+            </div>
+            <div className="reveal-up" style={{ '--reveal-delay': '0.08s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}>
+              <h1 className="text-3xl xxs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight text-left sm:text-center">
+                Here’s What We Can Do{' '}
+                <span className="bg-headingGradient text-transparent bg-clip-text font-semibold inline-block ml-1.5 sm:ml-2">
+                  For You.
+                </span>
+              </h1>
+            </div>
+            <div className="reveal-up" style={{ '--reveal-delay': '0.23s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}>
+              <p className="font-bodyfont text-textDescription text-sm sm:text-lg lg:text-xl text-left sm:text-center max-w-[640px]">
+                From websites and apps to custom software, we’re here to help you build a stronger digital presence and grow your business online.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Services Cards Grid */}
+        <div className="w-full flex flex-col items-center gap-5 xl:gap-5 2xl:gap-8 mb-24 xxxs:mb-14 xxs:mb-16 xs:mb-20 sm:mb-16 lg:mb-20 xl:mb-24 2xl:mb-28">
+          
+          {/* First Row of 3 Services */}
+          <div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}>
+            {servicesList.slice(0, 3).map((service) => (
+              <div
+                key={service.slug}
+                className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-[#8356FB]/60"
+              >
+                {/* Visual Header linking to Service Detail */}
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0 cursor-pointer"
+                >
+                  <img
+                    alt={service.title.replace('\n', ' ')}
+                    loading="lazy"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }}
+                    src="/images/ServiceBGDark.webp"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3 z-10">
+                    <h2 id={service.slug} className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line group-hover:text-navTextHover transition-colors duration-200">
+                      {service.title}
+                    </h2>
+                  </div>
+                </Link>
+
+                <div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto">
+                  <div className="flex flex-col gap-2.5 xs:gap-3">
+                    <p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">
+                      What&apos;s Included
+                    </p>
+                    <ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs">
+                          <div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true">
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          </div>
+                          <span className="leading-tight">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Explore Service Action */}
+                  <div className="w-full pt-1.5 xs:pt-2 mt-auto">
+                    <Link
+                      className="group/btn w-full block"
+                      aria-label={`Explore Service — ${service.title.replace('\n', ' ')}`}
+                      href={`/services/${service.slug}`}
+                    >
+                      <div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200">
+                        <p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">
+                          Explore Service
+                        </p>
+                        <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Second Row of Services (Video Editing, Branding, MVP) */}
+          <div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0.15s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}>
+            {servicesList.slice(3, 5).map((service) => (
+              <div
+                key={service.slug}
+                className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-[#8356FB]/60"
+              >
+                {/* Visual Header linking to Service Detail */}
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0 cursor-pointer"
+                >
+                  <img
+                    alt={service.title.replace('\n', ' ')}
+                    loading="lazy"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }}
+                    src="/images/ServiceBGDark.webp"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3 z-10">
+                    <h2 id={service.slug} className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line group-hover:text-navTextHover transition-colors duration-200">
+                      {service.title}
+                    </h2>
+                  </div>
+                </Link>
+
+                <div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto">
+                  <div className="flex flex-col gap-2.5 xs:gap-3">
+                    <p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">
+                      What&apos;s Included
+                    </p>
+                    <ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs">
+                          <div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true">
+                              <path d="M20 6 9 17l-5-5"></path>
+                            </svg>
+                          </div>
+                          <span className="leading-tight">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Explore Service Action */}
+                  <div className="w-full pt-1.5 xs:pt-2 mt-auto">
+                    <Link
+                      className="group/btn w-full block"
+                      aria-label={`Explore Service — ${service.title.replace('\n', ' ')}`}
+                      href={`/services/${service.slug}`}
+                    >
+                      <div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200">
+                        <p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">
+                          Explore Service
+                        </p>
+                        <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* MVP Service Card */}
+            <div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-[#8356FB]/60">
+              <Link
+                href="/services/mvp-development"
+                className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-[1.2] sm:w-1/2 sm:basis-1/2 md:aspect-[1.2] min-h-[140px] xs:min-h-[160px] sm:min-h-0 flex-shrink-0 overflow-hidden flex flex-col justify-between bg-white dark:bg-white p-4 sm:p-5 lg:p-6 lg:w-full lg:basis-auto lg:flex-1 lg:min-h-[340px] xl:min-h-[360px] lg:aspect-auto z-0 cursor-pointer"
+              >
+                <div className="z-10 max-w-[170px] xxs:max-w-[200px] xs:max-w-[220px] sm:max-w-[165px] md:max-w-[185px] lg:max-w-[260px] xl:max-w-[300px]">
+                  <p className="text-black font-headingfont font-extrabold text-xl xxs:text-2xl xs:text-2xl sm:text-lg md:text-xl lg:text-3xl xl:text-4xl leading-[1.15]">
+                    Have an Idea and wanna build a MVP ?
+                  </p>
+                </div>
+                <div className="absolute right-[-8px] bottom-[-8px] w-[160px] xxs:w-[190px] xs:w-[210px] sm:w-[155px] md:w-[175px] lg:w-[270px] xl:w-[310px] 2xl:w-[330px] h-auto pointer-events-none select-none">
+                  <img
+                    alt="Character working on laptop to build MVP"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                    className="w-full h-auto object-contain"
+                    src="/images/mvp-character.webp"
+                  />
+                </div>
+              </Link>
+              <div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-6 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:py-2 sm:w-1/2 sm:basis-1/2 flex-1 sm:h-full xl:gap-6 lg:w-full lg:basis-auto lg:justify-between lg:flex-none lg:h-auto lg:my-0 lg:px-2 lg:pb-2">
+                <p className="text-textDescription font-bodyfont text-xs xxs:text-sm sm:text-base lg:text-sm xl:text-base leading-relaxed">
+                  Turn your concept into a live product in just 14 days with our dedicated MVP sprint team.
+                </p>
+                <div className="flex flex-col gap-2.5">
+                  <Link
+                    className="group/btn h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200"
+                    href="/services/mvp-development"
+                  >
+                    <p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">
+                      Explore MVP Sprint
+                    </p>
+                    <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </Link>
+                  <a
+                    href="https://wa.me/917815043780?text=Hi%20Zentrix%20Infotech,%20I%20have%20an%20idea%20and%20want%20to%20build%20an%20MVP."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-center gap-2 px-3.5 sm:px-5 rounded-lg xs:rounded-xl bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-xs xs:text-sm sm:text-base transition-all duration-200 shadow-sm"
+                  >
+                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" className="w-3.5 h-3.5 xs:w-4 xs:h-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+                    </svg>
+                    <span className="mb-0.5">Chat on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
         {/* Interactive FAQ Section */}
         <SubpageFAQ
