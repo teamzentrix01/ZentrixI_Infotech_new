@@ -32,7 +32,7 @@ export default function BuildTogetherCTA() {
                 Book A Consultation Call
               </Link>
               <a
-                href="https://wa.me/917815043780?text=Hi%20Zentrix%20Infotech,%20I%20would%20like%20to%20discuss%20a%20project."
+                href="https://wa.me/916397036898?text=Hi%20Zentrix%20Infotech,%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 sm:px-12 py-3.5 sm:py-4 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white font-headingfont font-bold text-base sm:text-lg transition-all duration-200 shadow-xl hover:scale-105 active:scale-95 flex items-center gap-2"

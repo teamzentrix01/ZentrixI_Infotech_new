@@ -320,7 +320,7 @@ export default function ServicesPage() {
                     </div>
                   </Link>
                   <a
-                    href="https://wa.me/917815043780?text=Hi%20Zentrix%20Infotech,%20I%20have%20an%20idea%20and%20want%20to%20build%20an%20MVP."
+                    href="https://wa.me/916397036898?text=Hi%20Zentrix%20Infotech,%20I%20have%20an%20idea%20and%20want%20to%20build%20an%20MVP."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-center gap-2 px-3.5 sm:px-5 rounded-lg xs:rounded-xl bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-xs xs:text-sm sm:text-base transition-all duration-200 shadow-sm"

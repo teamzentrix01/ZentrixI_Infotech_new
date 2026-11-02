@@ -1,0 +1,510 @@
+{
+  "web-development": [
+    {
+      "tag": "li",
+      "text": "Web Development Services | Affordable & Scalable Websites – Zentrix Infotech{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Zentrix Infotech\",\"url\":\"https://www.zentrixinfotech.com/\",\"foundingDate\":\"2025\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://res.cloudinary.com/dewxpvl5s/image/upload/v1761370086/bg_remove_logo_zentrix_gn8ybw.png\",\"width\":512,\"height\":512},\"description\":\"Zentrix Infotech is a Website Development, Custom Software, and Digital Marketing company transforming ideas into powerful digital solutions for businesses worldwide.\",\"email\":\"info@zentrixinfotech.com\",\"telephone\":[\"+91 72488 00839\",\"+91 63970 36898\"],\"address\":[{\"@type\":\"PostalAddress\",\"streetAddress\":\"12/11, Buddhi Vihar Phase 2\",\"addressLocality\":\"Moradabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"244001\",\"addressCountry\":\"IN\"},{\"@type\":\"PostalAddress\",\"streetAddress\":\"A-20, Sunshine Apartment\",\"addressLocality\":\"Ghaziabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"201013\",\"addressCountry\":\"IN\"}],\"contactPoint\":[{\"@type\":\"ContactPoint\",\"telephone\":\"+91 72488 00839\",\"contactType\":\"Sales\",\"availableLanguage\":[\"English\",\"Hindi\"]},{\"@type\":\"ContactPoint\",\"telephone\":\"+91 63970 36898\",\"contactType\":\"Support\",\"availableLanguage\":[\"English\",\"Hindi\"]}],\"sameAs\":[\"https://www.facebook.com/zentrixinfotech.in/\",\"https://www.linkedin.com/company/zentrix-infotech\",\"https://www.instagram.com/zentrixinfotech\",\"https://wa.me/916397036898\"],\"hasOfferCatalog\":{\"@type\":\"OfferCatalog\",\"name\":\"Digital Services\",\"itemListElement\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Web Development\",\"url\":\"https://www.zentrixinfotech.com/services/web-development\",\"description\":\"Custom websites and web applications built with modern technologies for optimal performance and user experience.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"UI/UX Designing\",\"url\":\"https://www.zentrixinfotech.com/services/ui-ux-designing\",\"description\":\"Beautiful, intuitive interfaces designed to engage users and drive conversions.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Mobile App Development\",\"url\":\"https://www.zentrixinfotech.com/services/mobile-development\",\"description\":\"Native and cross-platform mobile applications for iOS and Android.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Software Development\",\"url\":\"https://www.zentrixinfotech.com/services/software-development\",\"description\":\"Comprehensive software solutions to improve efficiency and drive innovation.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Digital Marketing\",\"url\":\"https://www.zentrixinfotech.com/services/digital-marketing\",\"description\":\"Strategic digital marketing campaigns to boost online presence and drive measurable business growth.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Cloud Solutions\",\"url\":\"https://www.zentrixinfotech.com/services/cloud-solutions\",\"description\":\"Scalable cloud infrastructure and services to enhance performance, security, and business continuity.\"}}]},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"reviewCount\":\"270\"},\"areaServed\":{\"@type\":\"Country\",\"name\":\"India\"}}info@zentrixinfotech.com+91 72488 00839About ZentrixServicesPortfolioCase StudyContact UsBlogsLet’s ConnectWeb DevelopmentWeb DevelopmentCreate stunning, high-performance websites that captivate your audience and drive conversions. See how your website will look across all devices.Start Your Web ProjectCustom Tech StackTailored Next.js & React architecture built to scale.High ConversionFast-loading, SEO-ready pages that turn clicks to customers.100% Responsive UIClean Scalable CodeRapid DeliveryModern Web AppsCutting-edge web applications built with React, Next.js, and the latest technologies.Example:📊 Dashboard: User AnalyticsActive Users: 1.2kResponsive DesignPixel-perfect designs that work flawlessly across all devices and screen sizes.Example:📱 Devices:✔️ Mobile✔️ Tablet✔️ DesktopLightning FastOptimized for speed with advanced performance techniques and best practices.Example:⚡ Load Time: 0.8sGTMetrix Grade: ASEO OptimizedBuilt with SEO best practices to ensure maximum visibility and search rankings.Example:🔍 Meta Tags & Alt TextLighthouse Score: 97Perfect Responsiveness in ActionSee how your website transforms seamlessly from desktop to mobileDesktop Versionhttps://vasterior.comTechFlowFeaturesPricingAboutLoginGet StartedNew: AI-Powered AnalyticsScale Your Business with AITransform your workflow with intelligent automationStart Free TrialWatch DemoRevenue$24.5kUsers1,247Growth+18%Mobile Versionyoursaas.comTechFlowAI-PoweredScale Your BusinessIntelligent automation for teamsStart Free TrialRevenue$24.5kUsers1,247Desktop: Full navigation & detailed dashboard•Mobile: Optimized touch interface & stacked layoutTech ToolboxThe technologies powering our code.React.jsNext.jsNode.jsPythonJavaScriptTypeScriptMongoDBPostgreSQLFirebaseTailwind CSSHTML5CSS3ReduxWE CARRY MORE THAN JUST GOOD CODING SKILLSLet's Build Your WebsitePartner with us to transform your vision into a modern, high-converting digital presence built for sustainable growth.CONTACT USZentrix InfotechTransforming ideas into powerful digital solutions. We build next-generation software that drives innovation and growth for businesses worldwide.12/11, Buddhi Vihar Phase 2, Moradabad, Uttar Pradesh 244001A-20 Sunshine Apartment, Ghaziabad, UP - 201013+91 72488 00839+91 63970 36898info@zentrixinfotech.comSolutionsSoftware Development"
+    },
+    {
+      "tag": "li",
+      "text": "Digital Marketing"
+    },
+    {
+      "tag": "li",
+      "text": "Web Development"
+    },
+    {
+      "tag": "li",
+      "text": "UI/UX Designing"
+    },
+    {
+      "tag": "li",
+      "text": "Mobile App Development"
+    },
+    {
+      "tag": "li",
+      "text": "Cloud Solutions"
+    },
+    {
+      "tag": "h3",
+      "text": "Resources"
+    },
+    {
+      "tag": "li",
+      "text": "Support"
+    },
+    {
+      "tag": "h3",
+      "text": "Company"
+    },
+    {
+      "tag": "li",
+      "text": "Careers"
+    },
+    {
+      "tag": "li",
+      "text": "About Us"
+    },
+    {
+      "tag": "li",
+      "text": "Privacy Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Terms of Service"
+    },
+    {
+      "tag": "li",
+      "text": "Cookie Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Licenses"
+    },
+    {
+      "tag": "h4",
+      "text": "Follow Us"
+    }
+  ],
+  "ui-ux-designing": [
+    {
+      "tag": "li",
+      "text": "UI/UX Design Services | User-Focused & Affordable Design – Zentrix Infotech{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Zentrix Infotech\",\"url\":\"https://www.zentrixinfotech.com/\",\"foundingDate\":\"2025\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://res.cloudinary.com/dewxpvl5s/image/upload/v1761370086/bg_remove_logo_zentrix_gn8ybw.png\",\"width\":512,\"height\":512},\"description\":\"Zentrix Infotech is a Website Development, Custom Software, and Digital Marketing company transforming ideas into powerful digital solutions for businesses worldwide.\",\"email\":\"info@zentrixinfotech.com\",\"telephone\":[\"+91 72488 00839\",\"+91 63970 36898\"],\"address\":[{\"@type\":\"PostalAddress\",\"streetAddress\":\"12/11, Buddhi Vihar Phase 2\",\"addressLocality\":\"Moradabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"244001\",\"addressCountry\":\"IN\"},{\"@type\":\"PostalAddress\",\"streetAddress\":\"A-20, Sunshine Apartment\",\"addressLocality\":\"Ghaziabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"201013\",\"addressCountry\":\"IN\"}],\"contactPoint\":[{\"@type\":\"ContactPoint\",\"telephone\":\"+91 72488 00839\",\"contactType\":\"Sales\",\"availableLanguage\":[\"English\",\"Hindi\"]},{\"@type\":\"ContactPoint\",\"telephone\":\"+91 63970 36898\",\"contactType\":\"Support\",\"availableLanguage\":[\"English\",\"Hindi\"]}],\"sameAs\":[\"https://www.facebook.com/zentrixinfotech.in/\",\"https://www.linkedin.com/company/zentrix-infotech\",\"https://www.instagram.com/zentrixinfotech\",\"https://wa.me/916397036898\"],\"hasOfferCatalog\":{\"@type\":\"OfferCatalog\",\"name\":\"Digital Services\",\"itemListElement\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Web Development\",\"url\":\"https://www.zentrixinfotech.com/services/web-development\",\"description\":\"Custom websites and web applications built with modern technologies for optimal performance and user experience.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"UI/UX Designing\",\"url\":\"https://www.zentrixinfotech.com/services/ui-ux-designing\",\"description\":\"Beautiful, intuitive interfaces designed to engage users and drive conversions.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Mobile App Development\",\"url\":\"https://www.zentrixinfotech.com/services/mobile-development\",\"description\":\"Native and cross-platform mobile applications for iOS and Android.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Software Development\",\"url\":\"https://www.zentrixinfotech.com/services/software-development\",\"description\":\"Comprehensive software solutions to improve efficiency and drive innovation.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Digital Marketing\",\"url\":\"https://www.zentrixinfotech.com/services/digital-marketing\",\"description\":\"Strategic digital marketing campaigns to boost online presence and drive measurable business growth.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Cloud Solutions\",\"url\":\"https://www.zentrixinfotech.com/services/cloud-solutions\",\"description\":\"Scalable cloud infrastructure and services to enhance performance, security, and business continuity.\"}}]},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"reviewCount\":\"270\"},\"areaServed\":{\"@type\":\"Country\",\"name\":\"India\"}}info@zentrixinfotech.com+91 72488 00839About ZentrixServicesPortfolioCase StudyContact UsBlogsLet’s ConnectUI/UXInteractive Design ShowcaseExperience modern UI/UX principles through interactive elements and micro-animationshttps://designstudio.appDesignStudioWorkServicesAboutContactGet StartedCreative DesignCrafting Digital ExperiencesWe transform ideas into beautiful, functional digital products that users love and businesses need.150+Projects98%Satisfaction24/7SupportStart Your Project9:41Design VisionCreative DashboardProjects24 ActiveTeam12 MembersProgress78%Interactive PrototypesClick-through prototypes that feel like the real thingUser PsychologyDesigns based on behavioral science and user researchPerformance FocusedLightning-fast interfaces optimized for all devicesUI Design ComponentsThe building blocks that make up beautiful and functional user interfacesTypographyHierarchical text systems for readabilityExamplesHeadings, body text, captionsColor SystemsAccessible color palettes and tokensExamplesPrimary, secondary, semantic colorsComponentsReusable interface elementsExamplesButtons, forms, cards, modalsLayout GridsStructured spacing and alignmentExamples12-column grid, flexbox, CSS GridIcons & GraphicsVisual communication elementsExamplesIcon libraries, illustrations, imageryAnimationsMotion design for interactionsExamplesTransitions, micro-interactions, loading statesUX Design PrinciplesCore methodologies that drive user-centered design decisionsUser ResearchUnderstanding user needs, behaviors, and pain points through interviews and analytics85% better product-market fitInformation ArchitectureOrganizing content and features in logical, findable structures60% reduction in user confusionUser Journey MappingVisualizing the complete user experience across touchpoints40% improvement in conversion ratesWireframing & PrototypingCreating low and high-fidelity representations of the product70% faster development cyclesUsability TestingValidating designs with real users before development50% fewer post-launch issuesAccessibility DesignEnsuring products are usable by people with diverse abilities30% larger addressable marketDesign ProcessOur systematic approach to creating user-centered designsResearchUser interviews, market analysisDefineProblem definition, user personasIdeateBrainstorming, concept developmentPrototypeWireframes, interactive mockupsTestUser testing, feedback iterationTechnology StackModern tools and technologies we use to create exceptional digital experiencesDesign ToolsFigmaAdobe XDSketchFramerPrototypingPrincipleInVisionMarvelAxureResearchHotjarMazeUserTestingOptimal WorkshopDevelopmentReactVueAngularTailwind CSSWE CARRY MORE THAN JUST GOOD CODING SKILLSLet's Build Your WebsitePartner with us to transform your vision into a modern, high-converting digital presence built for sustainable growth.CONTACT USZentrix InfotechTransforming ideas into powerful digital solutions. We build next-generation software that drives innovation and growth for businesses worldwide.12/11, Buddhi Vihar Phase 2, Moradabad, Uttar Pradesh 244001A-20 Sunshine Apartment, Ghaziabad, UP - 201013+91 72488 00839+91 63970 36898info@zentrixinfotech.comSolutionsSoftware Development"
+    },
+    {
+      "tag": "li",
+      "text": "Digital Marketing"
+    },
+    {
+      "tag": "li",
+      "text": "Web Development"
+    },
+    {
+      "tag": "li",
+      "text": "UI/UX Designing"
+    },
+    {
+      "tag": "li",
+      "text": "Mobile App Development"
+    },
+    {
+      "tag": "li",
+      "text": "Cloud Solutions"
+    },
+    {
+      "tag": "h3",
+      "text": "Resources"
+    },
+    {
+      "tag": "li",
+      "text": "Support"
+    },
+    {
+      "tag": "h3",
+      "text": "Company"
+    },
+    {
+      "tag": "li",
+      "text": "Careers"
+    },
+    {
+      "tag": "li",
+      "text": "About Us"
+    },
+    {
+      "tag": "li",
+      "text": "Privacy Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Terms of Service"
+    },
+    {
+      "tag": "li",
+      "text": "Cookie Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Licenses"
+    },
+    {
+      "tag": "h4",
+      "text": "Follow Us"
+    }
+  ],
+  "mobile-development": [
+    {
+      "tag": "li",
+      "text": "Mobile App Development Services | Android & iOS Solutions – Zentrix Infotech{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Zentrix Infotech\",\"url\":\"https://www.zentrixinfotech.com/\",\"foundingDate\":\"2025\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://res.cloudinary.com/dewxpvl5s/image/upload/v1761370086/bg_remove_logo_zentrix_gn8ybw.png\",\"width\":512,\"height\":512},\"description\":\"Zentrix Infotech is a Website Development, Custom Software, and Digital Marketing company transforming ideas into powerful digital solutions for businesses worldwide.\",\"email\":\"info@zentrixinfotech.com\",\"telephone\":[\"+91 72488 00839\",\"+91 63970 36898\"],\"address\":[{\"@type\":\"PostalAddress\",\"streetAddress\":\"12/11, Buddhi Vihar Phase 2\",\"addressLocality\":\"Moradabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"244001\",\"addressCountry\":\"IN\"},{\"@type\":\"PostalAddress\",\"streetAddress\":\"A-20, Sunshine Apartment\",\"addressLocality\":\"Ghaziabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"201013\",\"addressCountry\":\"IN\"}],\"contactPoint\":[{\"@type\":\"ContactPoint\",\"telephone\":\"+91 72488 00839\",\"contactType\":\"Sales\",\"availableLanguage\":[\"English\",\"Hindi\"]},{\"@type\":\"ContactPoint\",\"telephone\":\"+91 63970 36898\",\"contactType\":\"Support\",\"availableLanguage\":[\"English\",\"Hindi\"]}],\"sameAs\":[\"https://www.facebook.com/zentrixinfotech.in/\",\"https://www.linkedin.com/company/zentrix-infotech\",\"https://www.instagram.com/zentrixinfotech\",\"https://wa.me/916397036898\"],\"hasOfferCatalog\":{\"@type\":\"OfferCatalog\",\"name\":\"Digital Services\",\"itemListElement\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Web Development\",\"url\":\"https://www.zentrixinfotech.com/services/web-development\",\"description\":\"Custom websites and web applications built with modern technologies for optimal performance and user experience.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"UI/UX Designing\",\"url\":\"https://www.zentrixinfotech.com/services/ui-ux-designing\",\"description\":\"Beautiful, intuitive interfaces designed to engage users and drive conversions.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Mobile App Development\",\"url\":\"https://www.zentrixinfotech.com/services/mobile-development\",\"description\":\"Native and cross-platform mobile applications for iOS and Android.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Software Development\",\"url\":\"https://www.zentrixinfotech.com/services/software-development\",\"description\":\"Comprehensive software solutions to improve efficiency and drive innovation.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Digital Marketing\",\"url\":\"https://www.zentrixinfotech.com/services/digital-marketing\",\"description\":\"Strategic digital marketing campaigns to boost online presence and drive measurable business growth.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Cloud Solutions\",\"url\":\"https://www.zentrixinfotech.com/services/cloud-solutions\",\"description\":\"Scalable cloud infrastructure and services to enhance performance, security, and business continuity.\"}}]},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"reviewCount\":\"270\"},\"areaServed\":{\"@type\":\"Country\",\"name\":\"India\"}}info@zentrixinfotech.com+91 72488 00839About ZentrixServicesPortfolioCase StudyContact UsBlogsLet’s ConnectMobile App DevelopmentTransform your ideas into powerful mobile experiences with native performance and stunning design.PerformanceSecurityScalableCross-platformmobile-app.jsximport React from 'react';\n\nconst MobileApp = () =&gt; {\n  const [user, setUser] = useState(null);\n  \n  return (\n    &lt;div className=\"app-container\"&gt;\n      &lt;h1&gt;Mobile App Development&lt;/h1&gt;\n      &lt;button onClick={handleLogin}&gt;\n        Get Started\n      &lt;/button&gt;\n    &lt;/div&gt;\n  );\n};Development DashboardReal-time insights into our mobile app development processActive Projects24+12%Apps Deployed156+8%Client Satisfaction98%+2%Code Coverage94%+5%9:41ECommerce ProSearch products...Summer SaleUp to 50% off on all itemsShop NowPopular ProductsProduct 1$29.99Product 2$29.99Product 3$29.99Product 4$29.992:30 PMFitTrackerHealth & FitnessToday's ProgressSteps8,543 / 10,000324Calories2.1Miles72BPMQuick ActionsStart WorkoutView StatsOur Development ServicesComprehensive mobile app development and branding solutions tailored to your business needsNative iOS DevelopmentSwift & SwiftUI applications with native performance and iOS design guidelinesTechnologies:SwiftSwiftUIXcodeCore DataCloudKitNative Android DevelopmentKotlin & Java applications following Material Design principlesTechnologies:KotlinJavaAndroid StudioJetpack ComposeFirebaseCross-Platform DevelopmentReact Native & Flutter apps with shared codebase for both platformsTechnologies:React NativeFlutterDartExpoTypeScriptUI/UX Design & BrandingComplete brand identity and user experience design for mobile applicationsTechnologies:FigmaAdobe XDSketchPrincipleAfter EffectsBackend & API DevelopmentSecure and scalable backend infrastructure with RESTful APIsTechnologies:Node.jsExpressMongoDBPostgreSQLAWSAnalytics & PerformanceAdvanced analytics, crash reporting, and performance monitoringTechnologies:Firebase AnalyticsCrashlyticsNew RelicMixpanelDevelopment ProcessOur proven methodology ensures successful app delivery from concept to store launch01Discovery & PlanningRequirements analysis, market research, and technical planning02Design & PrototypingUI/UX design, branding, and interactive prototypes03Development & TestingAgile development with continuous testing and QA04Launch & SupportApp store deployment and ongoing maintenanceWE CARRY MORE THAN JUST GOOD CODING SKILLSLet's Build Your WebsitePartner with us to transform your vision into a modern, high-converting digital presence built for sustainable growth.CONTACT USZentrix InfotechTransforming ideas into powerful digital solutions. We build next-generation software that drives innovation and growth for businesses worldwide.12/11, Buddhi Vihar Phase 2, Moradabad, Uttar Pradesh 244001A-20 Sunshine Apartment, Ghaziabad, UP - 201013+91 72488 00839+91 63970 36898info@zentrixinfotech.comSolutionsSoftware Development"
+    },
+    {
+      "tag": "li",
+      "text": "Digital Marketing"
+    },
+    {
+      "tag": "li",
+      "text": "Web Development"
+    },
+    {
+      "tag": "li",
+      "text": "UI/UX Designing"
+    },
+    {
+      "tag": "li",
+      "text": "Mobile App Development"
+    },
+    {
+      "tag": "li",
+      "text": "Cloud Solutions"
+    },
+    {
+      "tag": "h3",
+      "text": "Resources"
+    },
+    {
+      "tag": "li",
+      "text": "Support"
+    },
+    {
+      "tag": "h3",
+      "text": "Company"
+    },
+    {
+      "tag": "li",
+      "text": "Careers"
+    },
+    {
+      "tag": "li",
+      "text": "About Us"
+    },
+    {
+      "tag": "li",
+      "text": "Privacy Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Terms of Service"
+    },
+    {
+      "tag": "li",
+      "text": "Cookie Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Licenses"
+    },
+    {
+      "tag": "h4",
+      "text": "Follow Us"
+    }
+  ],
+  "software-development": [
+    {
+      "tag": "li",
+      "text": "Software Development Services | Affordable Custom Solutions – Zentrix Infotech{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Zentrix Infotech\",\"url\":\"https://www.zentrixinfotech.com/\",\"foundingDate\":\"2025\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://res.cloudinary.com/dewxpvl5s/image/upload/v1761370086/bg_remove_logo_zentrix_gn8ybw.png\",\"width\":512,\"height\":512},\"description\":\"Zentrix Infotech is a Website Development, Custom Software, and Digital Marketing company transforming ideas into powerful digital solutions for businesses worldwide.\",\"email\":\"info@zentrixinfotech.com\",\"telephone\":[\"+91 72488 00839\",\"+91 63970 36898\"],\"address\":[{\"@type\":\"PostalAddress\",\"streetAddress\":\"12/11, Buddhi Vihar Phase 2\",\"addressLocality\":\"Moradabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"244001\",\"addressCountry\":\"IN\"},{\"@type\":\"PostalAddress\",\"streetAddress\":\"A-20, Sunshine Apartment\",\"addressLocality\":\"Ghaziabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"201013\",\"addressCountry\":\"IN\"}],\"contactPoint\":[{\"@type\":\"ContactPoint\",\"telephone\":\"+91 72488 00839\",\"contactType\":\"Sales\",\"availableLanguage\":[\"English\",\"Hindi\"]},{\"@type\":\"ContactPoint\",\"telephone\":\"+91 63970 36898\",\"contactType\":\"Support\",\"availableLanguage\":[\"English\",\"Hindi\"]}],\"sameAs\":[\"https://www.facebook.com/zentrixinfotech.in/\",\"https://www.linkedin.com/company/zentrix-infotech\",\"https://www.instagram.com/zentrixinfotech\",\"https://wa.me/916397036898\"],\"hasOfferCatalog\":{\"@type\":\"OfferCatalog\",\"name\":\"Digital Services\",\"itemListElement\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Web Development\",\"url\":\"https://www.zentrixinfotech.com/services/web-development\",\"description\":\"Custom websites and web applications built with modern technologies for optimal performance and user experience.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"UI/UX Designing\",\"url\":\"https://www.zentrixinfotech.com/services/ui-ux-designing\",\"description\":\"Beautiful, intuitive interfaces designed to engage users and drive conversions.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Mobile App Development\",\"url\":\"https://www.zentrixinfotech.com/services/mobile-development\",\"description\":\"Native and cross-platform mobile applications for iOS and Android.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Software Development\",\"url\":\"https://www.zentrixinfotech.com/services/software-development\",\"description\":\"Comprehensive software solutions to improve efficiency and drive innovation.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Digital Marketing\",\"url\":\"https://www.zentrixinfotech.com/services/digital-marketing\",\"description\":\"Strategic digital marketing campaigns to boost online presence and drive measurable business growth.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Cloud Solutions\",\"url\":\"https://www.zentrixinfotech.com/services/cloud-solutions\",\"description\":\"Scalable cloud infrastructure and services to enhance performance, security, and business continuity.\"}}]},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"reviewCount\":\"270\"},\"areaServed\":{\"@type\":\"Country\",\"name\":\"India\"}}info@zentrixinfotech.com+91 72488 00839About ZentrixServicesPortfolioCase StudyContact UsBlogsLet’s ConnectSoftware DevelopmentBuild Powerful Software SolutionsTransform your ideas into robust, scalable software applications with our expert development team. From concept to deployment, we deliver cutting-edge solutions that drive business growth.Developer Console: main.tsfunction deployApp() {const build = compileCode();const result = upload(build, 'prod');console.log('🚀 Deployment Successful');}root@dev:~$ yarn deploy --env production🔄 Bundling modules...✔ Build complete in 2.91s📦 Uploaded to S3 → cdn.nexgen.dev✅ Deployment to server-1 completed!Memory Usage2.3 GB / 8 GBCPU Load34%Our Development ServicesComprehensive software development solutions tailored to your business needsCustom Software DevelopmentTailored solutions built from scratch to meet your specific business requirementsFull-stack development"
+    },
+    {
+      "tag": "li",
+      "text": "API integration"
+    },
+    {
+      "tag": "li",
+      "text": "Real-time systems"
+    },
+    {
+      "tag": "li",
+      "text": "Scalable architecture"
+    },
+    {
+      "tag": "p",
+      "text": "Enterprise SolutionsRobust, scalable systems designed for large-scale business operations"
+    },
+    {
+      "tag": "li",
+      "text": "ERP systems"
+    },
+    {
+      "tag": "li",
+      "text": "CRM platforms"
+    },
+    {
+      "tag": "li",
+      "text": "Business intelligence"
+    },
+    {
+      "tag": "li",
+      "text": "Workflow automation"
+    },
+    {
+      "tag": "p",
+      "text": "Security & ComplianceSecure software with industry-standard compliance and data protection"
+    },
+    {
+      "tag": "li",
+      "text": "Data encryption"
+    },
+    {
+      "tag": "li",
+      "text": "GDPR compliance"
+    },
+    {
+      "tag": "li",
+      "text": "Security audits"
+    },
+    {
+      "tag": "li",
+      "text": "Penetration testing"
+    },
+    {
+      "tag": "p",
+      "text": "Performance OptimizationHigh-performance applications optimized for speed and efficiency"
+    },
+    {
+      "tag": "li",
+      "text": "Code optimization"
+    },
+    {
+      "tag": "li",
+      "text": "Database tuning"
+    },
+    {
+      "tag": "li",
+      "text": "Caching strategies"
+    },
+    {
+      "tag": "li",
+      "text": "Load balancing"
+    },
+    {
+      "tag": "h2",
+      "text": "Tech Toolbox"
+    },
+    {
+      "tag": "p",
+      "text": "The technologies powering our code."
+    },
+    {
+      "tag": "p",
+      "text": "React.jsNode.jsPythonMongoDBTailwind CSSDockerAWSGitTypeScriptJavaAngularLinuxPostgreSQLJenkinsKubernetesReduxNext.jsSQL DatabasesReady to Build Something Amazing?Let's discuss your software development needs and create a solution that exceeds your expectations."
+    },
+    {
+      "tag": "h2",
+      "text": "Let's Build Your Website"
+    },
+    {
+      "tag": "p",
+      "text": "Partner with us to transform your vision into a modern, high-converting digital presence built for sustainable growth."
+    },
+    {
+      "tag": "p",
+      "text": "Zentrix InfotechTransforming ideas into powerful digital solutions. We build next-generation software that drives innovation and growth for businesses worldwide."
+    },
+    {
+      "tag": "p",
+      "text": "12/11, Buddhi Vihar Phase 2, Moradabad, Uttar Pradesh 244001"
+    },
+    {
+      "tag": "p",
+      "text": "A-20 Sunshine Apartment, Ghaziabad, UP - 201013"
+    },
+    {
+      "tag": "h3",
+      "text": "Solutions"
+    },
+    {
+      "tag": "li",
+      "text": "Software Development"
+    },
+    {
+      "tag": "li",
+      "text": "Digital Marketing"
+    },
+    {
+      "tag": "li",
+      "text": "Web Development"
+    },
+    {
+      "tag": "li",
+      "text": "UI/UX Designing"
+    },
+    {
+      "tag": "li",
+      "text": "Mobile App Development"
+    },
+    {
+      "tag": "li",
+      "text": "Cloud Solutions"
+    },
+    {
+      "tag": "h3",
+      "text": "Resources"
+    },
+    {
+      "tag": "li",
+      "text": "Support"
+    },
+    {
+      "tag": "h3",
+      "text": "Company"
+    },
+    {
+      "tag": "li",
+      "text": "Careers"
+    },
+    {
+      "tag": "li",
+      "text": "About Us"
+    },
+    {
+      "tag": "li",
+      "text": "Privacy Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Terms of Service"
+    },
+    {
+      "tag": "li",
+      "text": "Cookie Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Licenses"
+    },
+    {
+      "tag": "h4",
+      "text": "Follow Us"
+    }
+  ],
+  "digital-marketing": [
+    {
+      "tag": "li",
+      "text": "Digital Marketing Services | SEO, Social Media & Growth Marketing – Zentrix Infotech{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Zentrix Infotech\",\"url\":\"https://www.zentrixinfotech.com/\",\"foundingDate\":\"2025\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://res.cloudinary.com/dewxpvl5s/image/upload/v1761370086/bg_remove_logo_zentrix_gn8ybw.png\",\"width\":512,\"height\":512},\"description\":\"Zentrix Infotech is a Website Development, Custom Software, and Digital Marketing company transforming ideas into powerful digital solutions for businesses worldwide.\",\"email\":\"info@zentrixinfotech.com\",\"telephone\":[\"+91 72488 00839\",\"+91 63970 36898\"],\"address\":[{\"@type\":\"PostalAddress\",\"streetAddress\":\"12/11, Buddhi Vihar Phase 2\",\"addressLocality\":\"Moradabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"244001\",\"addressCountry\":\"IN\"},{\"@type\":\"PostalAddress\",\"streetAddress\":\"A-20, Sunshine Apartment\",\"addressLocality\":\"Ghaziabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"201013\",\"addressCountry\":\"IN\"}],\"contactPoint\":[{\"@type\":\"ContactPoint\",\"telephone\":\"+91 72488 00839\",\"contactType\":\"Sales\",\"availableLanguage\":[\"English\",\"Hindi\"]},{\"@type\":\"ContactPoint\",\"telephone\":\"+91 63970 36898\",\"contactType\":\"Support\",\"availableLanguage\":[\"English\",\"Hindi\"]}],\"sameAs\":[\"https://www.facebook.com/zentrixinfotech.in/\",\"https://www.linkedin.com/company/zentrix-infotech\",\"https://www.instagram.com/zentrixinfotech\",\"https://wa.me/916397036898\"],\"hasOfferCatalog\":{\"@type\":\"OfferCatalog\",\"name\":\"Digital Services\",\"itemListElement\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Web Development\",\"url\":\"https://www.zentrixinfotech.com/services/web-development\",\"description\":\"Custom websites and web applications built with modern technologies for optimal performance and user experience.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"UI/UX Designing\",\"url\":\"https://www.zentrixinfotech.com/services/ui-ux-designing\",\"description\":\"Beautiful, intuitive interfaces designed to engage users and drive conversions.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Mobile App Development\",\"url\":\"https://www.zentrixinfotech.com/services/mobile-development\",\"description\":\"Native and cross-platform mobile applications for iOS and Android.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Software Development\",\"url\":\"https://www.zentrixinfotech.com/services/software-development\",\"description\":\"Comprehensive software solutions to improve efficiency and drive innovation.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Digital Marketing\",\"url\":\"https://www.zentrixinfotech.com/services/digital-marketing\",\"description\":\"Strategic digital marketing campaigns to boost online presence and drive measurable business growth.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Cloud Solutions\",\"url\":\"https://www.zentrixinfotech.com/services/cloud-solutions\",\"description\":\"Scalable cloud infrastructure and services to enhance performance, security, and business continuity.\"}}]},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"reviewCount\":\"270\"},\"areaServed\":{\"@type\":\"Country\",\"name\":\"India\"}}info@zentrixinfotech.com+91 72488 00839About ZentrixServicesPortfolioCase StudyContact UsBlogsLet’s ConnectDigital MarketingUnified analytics dashboard for all your marketing campaignsMarketing Analytics ProLive Campaign+85%Campaign ROI425%vs last month+32%Lead Generation2.4Knew leads+2.1%CTR8.7%click rate+4.2%Conversion12.3%conversion rateCampaign PerformanceGoogle AdsFacebook AdsLinkedIn AdsA/B Test: +15% CTRBudget Alert: 85% spentNew lead source foundOur Core OfferingsWhat We ProvideComprehensive digital marketing solutions to grow your business across all channelsGoogle Ads ManagementSearch, Display, Shopping & YouTube campaigns with advanced targeting and optimizationKeyword ResearchAd Copy CreationBid ManagementConversion TrackingMeta Ads (Facebook & Instagram)Social media advertising across Facebook and Instagram with creative strategyAudience TargetingCreative DesignA/B TestingRetargeting CampaignsLinkedIn AdvertisingB2B lead generation and brand awareness campaigns for professional audiencesLead Gen FormsSponsored ContentMessage AdsAccount TargetingSearch Engine OptimizationOrganic ranking improvement through technical SEO, content, and link buildingKeyword OptimizationTechnical SEOContent StrategyLocal SEOGoogle My BusinessLocal business optimization to increase visibility in local search resultsProfile OptimizationReview ManagementLocal CitationsGMB PostsAnalytics & ReportingComprehensive tracking and reporting across all marketing channelsPerformance TrackingROI AnalysisCustom DashboardsMonthly ReportsWhy ZentrixWhy Choose Our Digital Marketing Services?ROI FocusedEvery campaign optimized for maximum return on investmentExpert TeamCertified professionals with years of industry experienceFull TransparencyReal-time reporting and complete campaign visibilityScalable GrowthStrategies that grow with your business needsOverviewOverviewGoogle AdsGoogleMeta AdsMetaLinkedIn AdsLinkedInSEO RankingsSEOGoogle My BusinessGoogle+12%261KTotal Impressions+18%13.4KTotal Clicks+24%1,315Conversions+8%4.2xROASPerformance TrendsTraffic DistributionWE CARRY MORE THAN JUST GOOD CODING SKILLSLet's Build Your WebsitePartner with us to transform your vision into a modern, high-converting digital presence built for sustainable growth.CONTACT USZentrix InfotechTransforming ideas into powerful digital solutions. We build next-generation software that drives innovation and growth for businesses worldwide.12/11, Buddhi Vihar Phase 2, Moradabad, Uttar Pradesh 244001A-20 Sunshine Apartment, Ghaziabad, UP - 201013+91 72488 00839+91 63970 36898info@zentrixinfotech.comSolutionsSoftware Development"
+    },
+    {
+      "tag": "li",
+      "text": "Digital Marketing"
+    },
+    {
+      "tag": "li",
+      "text": "Web Development"
+    },
+    {
+      "tag": "li",
+      "text": "UI/UX Designing"
+    },
+    {
+      "tag": "li",
+      "text": "Mobile App Development"
+    },
+    {
+      "tag": "li",
+      "text": "Cloud Solutions"
+    },
+    {
+      "tag": "h3",
+      "text": "Resources"
+    },
+    {
+      "tag": "li",
+      "text": "Support"
+    },
+    {
+      "tag": "h3",
+      "text": "Company"
+    },
+    {
+      "tag": "li",
+      "text": "Careers"
+    },
+    {
+      "tag": "li",
+      "text": "About Us"
+    },
+    {
+      "tag": "li",
+      "text": "Privacy Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Terms of Service"
+    },
+    {
+      "tag": "li",
+      "text": "Cookie Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Licenses"
+    },
+    {
+      "tag": "h4",
+      "text": "Follow Us"
+    }
+  ],
+  "cloud-solutions": [
+    {
+      "tag": "li",
+      "text": "Cloud Solutions & Services | Scalable Cloud Infrastructure – Zentrix Infotech{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Zentrix Infotech\",\"url\":\"https://www.zentrixinfotech.com/\",\"foundingDate\":\"2025\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://res.cloudinary.com/dewxpvl5s/image/upload/v1761370086/bg_remove_logo_zentrix_gn8ybw.png\",\"width\":512,\"height\":512},\"description\":\"Zentrix Infotech is a Website Development, Custom Software, and Digital Marketing company transforming ideas into powerful digital solutions for businesses worldwide.\",\"email\":\"info@zentrixinfotech.com\",\"telephone\":[\"+91 72488 00839\",\"+91 63970 36898\"],\"address\":[{\"@type\":\"PostalAddress\",\"streetAddress\":\"12/11, Buddhi Vihar Phase 2\",\"addressLocality\":\"Moradabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"244001\",\"addressCountry\":\"IN\"},{\"@type\":\"PostalAddress\",\"streetAddress\":\"A-20, Sunshine Apartment\",\"addressLocality\":\"Ghaziabad\",\"addressRegion\":\"Uttar Pradesh\",\"postalCode\":\"201013\",\"addressCountry\":\"IN\"}],\"contactPoint\":[{\"@type\":\"ContactPoint\",\"telephone\":\"+91 72488 00839\",\"contactType\":\"Sales\",\"availableLanguage\":[\"English\",\"Hindi\"]},{\"@type\":\"ContactPoint\",\"telephone\":\"+91 63970 36898\",\"contactType\":\"Support\",\"availableLanguage\":[\"English\",\"Hindi\"]}],\"sameAs\":[\"https://www.facebook.com/zentrixinfotech.in/\",\"https://www.linkedin.com/company/zentrix-infotech\",\"https://www.instagram.com/zentrixinfotech\",\"https://wa.me/916397036898\"],\"hasOfferCatalog\":{\"@type\":\"OfferCatalog\",\"name\":\"Digital Services\",\"itemListElement\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Web Development\",\"url\":\"https://www.zentrixinfotech.com/services/web-development\",\"description\":\"Custom websites and web applications built with modern technologies for optimal performance and user experience.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"UI/UX Designing\",\"url\":\"https://www.zentrixinfotech.com/services/ui-ux-designing\",\"description\":\"Beautiful, intuitive interfaces designed to engage users and drive conversions.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Mobile App Development\",\"url\":\"https://www.zentrixinfotech.com/services/mobile-development\",\"description\":\"Native and cross-platform mobile applications for iOS and Android.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Software Development\",\"url\":\"https://www.zentrixinfotech.com/services/software-development\",\"description\":\"Comprehensive software solutions to improve efficiency and drive innovation.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Digital Marketing\",\"url\":\"https://www.zentrixinfotech.com/services/digital-marketing\",\"description\":\"Strategic digital marketing campaigns to boost online presence and drive measurable business growth.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Cloud Solutions\",\"url\":\"https://www.zentrixinfotech.com/services/cloud-solutions\",\"description\":\"Scalable cloud infrastructure and services to enhance performance, security, and business continuity.\"}}]},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"reviewCount\":\"270\"},\"areaServed\":{\"@type\":\"Country\",\"name\":\"India\"}}info@zentrixinfotech.com+91 72488 00839About ZentrixServicesPortfolioCase StudyContact UsBlogsLet’s Connect\n        @keyframes marquee {\n          0% { transform: translateX(0%); }\n          100% { transform: translateX(-50%); }\n        }\n        .animate-marquee { animation: marquee 25s linear infinite; }\n        .animate-marquee:hover { animation-play-state: paused; }\n      Live Production EnvironmentEnterprise CloudThat Just WorksDeploy, scale, and manage your applications with our intelligent cloud platform. Trusted by 10,000+ developers worldwide.Production ConsoleAll Systems OperationalCPU Usage67%Memory84%Network I/O45%Storage72%Cloud Infrastructure2847 instancesHealthySecurity Shield156 instancesProtectedData Analytics934 instancesProcessingGlobal CDN78 instancesOptimizedPowerful Cloud SolutionsEnterprise-ready tools for modern applicationsAuto-Scaling InfrastructureDynamic resource allocationLearn MoreAdvanced Security SuiteAI-powered threat detectionLearn MoreReal-time AnalyticsInstant insights & reportingLearn MoreGlobal Edge NetworkUltra-low latency worldwideLearn MoreContainer OrchestrationKubernetes-native deploymentLearn MoreServerless ComputingEvent-driven functionsLearn MoreTech ToolboxThe technologies powering our cloud solutionsAWS EC2AWS S3DockerKubernetesCloudWatchLambdaRDSRoute 53EKSTerraformAnsiblePrometheusGrafanaJenkinsGitLabWE CARRY MORE THAN JUST GOOD CODING SKILLSLet's Build Your WebsitePartner with us to transform your vision into a modern, high-converting digital presence built for sustainable growth.CONTACT USZentrix InfotechTransforming ideas into powerful digital solutions. We build next-generation software that drives innovation and growth for businesses worldwide.12/11, Buddhi Vihar Phase 2, Moradabad, Uttar Pradesh 244001A-20 Sunshine Apartment, Ghaziabad, UP - 201013+91 72488 00839+91 63970 36898info@zentrixinfotech.comSolutionsSoftware Development"
+    },
+    {
+      "tag": "li",
+      "text": "Digital Marketing"
+    },
+    {
+      "tag": "li",
+      "text": "Web Development"
+    },
+    {
+      "tag": "li",
+      "text": "UI/UX Designing"
+    },
+    {
+      "tag": "li",
+      "text": "Mobile App Development"
+    },
+    {
+      "tag": "li",
+      "text": "Cloud Solutions"
+    },
+    {
+      "tag": "h3",
+      "text": "Resources"
+    },
+    {
+      "tag": "li",
+      "text": "Support"
+    },
+    {
+      "tag": "h3",
+      "text": "Company"
+    },
+    {
+      "tag": "li",
+      "text": "Careers"
+    },
+    {
+      "tag": "li",
+      "text": "About Us"
+    },
+    {
+      "tag": "li",
+      "text": "Privacy Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Terms of Service"
+    },
+    {
+      "tag": "li",
+      "text": "Cookie Policy"
+    },
+    {
+      "tag": "li",
+      "text": "Licenses"
+    },
+    {
+      "tag": "h4",
+      "text": "Follow Us"
+    }
+  ]
+}
