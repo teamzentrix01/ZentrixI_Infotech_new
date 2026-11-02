@@ -76,8 +76,8 @@ export default function TermsPage() {
                   connect@zentrixinfotech.com
                 </a>{' '}
                 or call{' '}
-                <a href="tel:+917815043780" className="text-[#8356FB] hover:underline">
-                  +91 7815043780
+                <a href="tel:+917248800839" className="text-[#8356FB] hover:underline">
+                  +91 72488 00839
                 </a>.
               </p>
             </div>
