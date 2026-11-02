@@ -1,15 +1,16 @@
 'use client';
 
 const sliderImages = [
-  { src: '/images/SliderImg_1.webp', alt: 'Lineage Corporation website designed by Zentrix Infotech' },
-  { src: '/images/SliderImg_2.webp', alt: 'FITLOC precision hydraulic components website designed by Zentrix Infotech' },
-  { src: '/images/SliderImg_3.webp', alt: 'Sawasheri Direct grocery platform designed by Zentrix Infotech' },
-  { src: '/images/SliderImg_4.webp', alt: 'Radiant Craft Creation e-commerce platform by Zentrix Infotech' },
-  { src: '/images/SliderImg_6.webp', alt: 'Auxilium digital platform designed by Zentrix Infotech' },
-  { src: '/images/SliderImg_7.webp', alt: 'Technolkar website designed by Zentrix Infotech' },
-  { src: '/images/SliderImg_8.webp', alt: 'BITW SaaS dashboard designed by Zentrix Infotech' },
-  { src: '/images/SliderImg_9.webp', alt: 'SuperOatMeals application designed by Zentrix Infotech' },
-  { src: '/images/SliderImg_10.webp', alt: 'ADA Fashion Portfolio designed by Zentrix Infotech' },
+  { src: '/images/slider/buyzaar_mart.webp', alt: 'The Buyzaar Mart online grocery shopping platform designed by Zentrix Infotech' },
+  { src: '/images/slider/ps_decor.webp', alt: 'PS Decor luxury wedding and event styling website designed by Zentrix Infotech' },
+  { src: '/images/slider/mt_boss.webp', alt: 'MT BOSS on-demand home construction & worker booking app designed by Zentrix Infotech' },
+  { src: '/images/slider/jigyasa_hospital.webp', alt: 'Jigyasa Hospital multi-specialty healthcare portal designed by Zentrix Infotech' },
+  { src: '/images/slider/vasterior.webp', alt: 'Vasterior luxury interior & architectural design platform designed by Zentrix Infotech' },
+  { src: '/images/slider/kairvi_resort.webp', alt: 'Kairvi Fort Resort regal heritage destination wedding estate designed by Zentrix Infotech' },
+  { src: '/images/slider/herbsfox.webp', alt: 'HerbsFox organic Ayurvedic spices & herbs marketplace designed by Zentrix Infotech' },
+  { src: '/images/slider/oracle_eye_hospital.webp', alt: 'Oracle Eye Hospital super specialty laser & retina care website designed by Zentrix Infotech' },
+  { src: '/images/slider/alluring_glimpses.webp', alt: 'Alluring Glimpses spatial architecture and interior design portfolio designed by Zentrix Infotech' },
+  { src: '/images/slider/kdedu.webp', alt: 'Kamla Devi Group of Institutions (KDEDU) campus admissions portal designed by Zentrix Infotech' },
 ];
 
 export default function TopProjectsSlider() {
