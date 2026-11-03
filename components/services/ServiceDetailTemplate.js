@@ -7,13 +7,15 @@ export default function ServiceDetailTemplate({ serviceKey }) {
   const service = servicesData[serviceKey];
   const [activeSection, setActiveSection] = useState('overview');
 
-  // Find other services for the bottom grid
-  const otherServices = Object.values(servicesData).filter((s) => s.slug !== service.slug);
+  // Find other services for the bottom grid (deduplicated by slug)
+  const otherServices = Array.from(
+    new Map(Object.values(servicesData).map((s) => [s.slug, s])).values()
+  ).filter((s) => s.slug !== service?.slug);
 
   useEffect(() => {
     const handleScroll = () => {
       const allIds = [];
-      service.toc.forEach((item) => {
+      service?.toc?.forEach((item) => {
         allIds.push(item.id);
         if (item.sub) {
           item.sub.forEach((subItem) => allIds.push(subItem.id));
@@ -96,12 +98,17 @@ export default function ServiceDetailTemplate({ serviceKey }) {
             <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
               <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 pt-8 pb-6">
                 <div className="w-full flex flex-col gap-6">
+                  
+                  {/* Top Pill & Action Button */}
                   <div className="flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-2">
-                      <span className="rounded-full border border-border bg-cardBg py-1 px-3.5 text-xs font-semibold text-textDescription font-bodyfont shadow-sm">
-                        {service.category}
+                      {/* Pill Badge displaying Service Name */}
+                      <span className="rounded-full border border-border bg-cardBg py-1 px-3.5 text-xs sm:text-sm font-semibold text-textHeading font-bodyfont shadow-sm flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-navTextHover animate-pulse"></span>
+                        {service.title}
                       </span>
                     </div>
+
                     <Link
                       href={service.ctaHref}
                       className="h-11 sm:h-12 flex items-center justify-between pl-4 sm:pl-5 pr-2 gap-3 sm:gap-4 rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200 group/live shadow-sm"
@@ -130,14 +137,17 @@ export default function ServiceDetailTemplate({ serviceKey }) {
                     </Link>
                   </div>
 
+                  {/* Headline Tagline (Bada / Large Heading) */}
                   <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-[1.08] tracking-tight text-textHeading font-headingfont">
-                    {service.title}
+                    {service.headline || service.title}
                   </h1>
 
+                  {/* Catchy Tagline (Chota / Sub-heading) */}
                   <p className="font-bodyfont text-base sm:text-xl leading-relaxed text-textDescription max-w-[52rem]">
                     {service.tagline}
                   </p>
 
+                  {/* Timeline, Engagement, Deliverables, Outcome */}
                   <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5 pt-5 spotlight-line border-t font-bodyfont">
                     <div className="flex flex-col gap-1 min-w-0">
                       <dt className="text-[11px] uppercase tracking-wider text-textDescription font-semibold">Timeline</dt>
@@ -157,16 +167,22 @@ export default function ServiceDetailTemplate({ serviceKey }) {
                     </div>
                   </dl>
 
-                  <ul className="flex flex-wrap gap-2 pt-1 list-none p-0 m-0">
-                    {service.tags.map((tag, idx) => (
-                      <li
-                        key={idx}
-                        className="font-bodyfont text-xs font-medium px-2.5 py-1 rounded-md border border-border bg-cardBg text-textDescription"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Technologies Label & Tags */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 pt-2">
+                    <span className="text-xs uppercase tracking-wider font-bold text-textHeading font-headingfont shrink-0">
+                      Technologies:
+                    </span>
+                    <ul className="flex flex-wrap gap-2 list-none p-0 m-0">
+                      {service.tags.map((tag, idx) => (
+                        <li
+                          key={idx}
+                          className="font-bodyfont text-xs font-medium px-2.5 py-1 rounded-md border border-border bg-cardBg text-textDescription shadow-sm"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -182,6 +198,222 @@ export default function ServiceDetailTemplate({ serviceKey }) {
                       className="object-cover w-full h-full"
                       style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }}
                     />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Section 1: Our Previous Work */}
+            <div id="previous-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
+              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-12">
+                <div className="w-full flex flex-col gap-6">
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                      <span className="text-xs uppercase tracking-wider font-bold text-navTextHover font-headingfont">
+                        Portfolio Showcase
+                      </span>
+                      <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-textHeading font-headingfont mt-1">
+                        Our Previous Work
+                      </h2>
+                    </div>
+                    <Link
+                      href="/projects"
+                      className="text-xs sm:text-sm font-semibold text-navTextHover hover:underline flex items-center gap-1 group/link"
+                    >
+                      <span>View All Projects</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-2">
+                    {/* Project Card 1 */}
+                    <div className="border border-border bg-cardBg rounded-2xl p-4 flex flex-col justify-between hover:border-[#8356FB]/60 transition-all duration-300 shadow-sm group">
+                      <div className="w-full aspect-[16/10] rounded-xl overflow-hidden relative mb-4 bg-black/20">
+                        <img
+                          src="/images/SliderImg_1.webp"
+                          alt="Sawasheri Direct Platform"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute top-2.5 left-2.5 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-semibold text-white">
+                          E-Commerce &amp; Mobile App
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-2 flex-1">
+                        <h3 className="text-lg font-bold text-textHeading group-hover:text-navTextHover transition-colors">
+                          Sawasheri Direct
+                        </h3>
+                        <p className="text-xs sm:text-sm text-textDescription line-clamp-2 font-bodyfont leading-relaxed">
+                          Turnkey grocery e-commerce platform, native iOS and Android apps, real-time inventory synchronization, and automated slot delivery routing.
+                        </p>
+                      </div>
+                      <div className="pt-4 mt-auto flex items-center justify-between border-t border-border/60 text-xs font-semibold">
+                        <span className="text-textDescription font-bodyfont">Delivered in 4 Weeks</span>
+                        <Link href="/projects" className="text-navTextHover hover:underline flex items-center gap-1">
+                          Case Study →
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Project Card 2 */}
+                    <div className="border border-border bg-cardBg rounded-2xl p-4 flex flex-col justify-between hover:border-[#8356FB]/60 transition-all duration-300 shadow-sm group">
+                      <div className="w-full aspect-[16/10] rounded-xl overflow-hidden relative mb-4 bg-black/20">
+                        <img
+                          src="/images/SliderImg_2.webp"
+                          alt="Lineage Corporation Experience"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute top-2.5 left-2.5 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-semibold text-white">
+                          Enterprise Platform
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-2 flex-1">
+                        <h3 className="text-lg font-bold text-textHeading group-hover:text-navTextHover transition-colors">
+                          Lineage Corporation
+                        </h3>
+                        <p className="text-xs sm:text-sm text-textDescription line-clamp-2 font-bodyfont leading-relaxed">
+                          Global luxury web platform with headless CMS workflows, interactive 3D product previews, and high-converting B2B inquiry funnels.
+                        </p>
+                      </div>
+                      <div className="pt-4 mt-auto flex items-center justify-between border-t border-border/60 text-xs font-semibold">
+                        <span className="text-textDescription font-bodyfont">Delivered in 3 Weeks</span>
+                        <Link href="/projects" className="text-navTextHover hover:underline flex items-center gap-1">
+                          Case Study →
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Project Card 3 */}
+                    <div className="border border-border bg-cardBg rounded-2xl p-4 flex flex-col justify-between hover:border-[#8356FB]/60 transition-all duration-300 shadow-sm group">
+                      <div className="w-full aspect-[16/10] rounded-xl overflow-hidden relative mb-4 bg-black/20">
+                        <img
+                          src="/images/SliderImg_3.webp"
+                          alt="Blue Island Works Platform"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute top-2.5 left-2.5 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-semibold text-white">
+                          Production &amp; Brand
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-2 flex-1">
+                        <h3 className="text-lg font-bold text-textHeading group-hover:text-navTextHover transition-colors">
+                          Blue Island Works
+                        </h3>
+                        <p className="text-xs sm:text-sm text-textDescription line-clamp-2 font-bodyfont leading-relaxed">
+                          Cinema-grade promotional video production, dynamic motion graphics, and corporate platform built to scale international market reach.
+                        </p>
+                      </div>
+                      <div className="pt-4 mt-auto flex items-center justify-between border-t border-border/60 text-xs font-semibold">
+                        <span className="text-textDescription font-bodyfont">Delivered in 2.5 Weeks</span>
+                        <Link href="/projects" className="text-navTextHover hover:underline flex items-center gap-1">
+                          Case Study →
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Section 2: Impact of Work on Clients */}
+            <div id="impact-of-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
+              <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-12">
+                <div className="w-full flex flex-col gap-8">
+                  <div>
+                    <span className="text-xs uppercase tracking-wider font-bold text-navTextHover font-headingfont">
+                      Measurable Outcomes
+                    </span>
+                    <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-textHeading font-headingfont mt-1">
+                      Impact of Work on Clients
+                    </h2>
+                    <p className="font-bodyfont text-sm sm:text-base text-textDescription mt-1 max-w-[48rem]">
+                      We engineer for quantifiable business outcomes — higher customer conversions, faster platform performance, and verified ROI.
+                    </p>
+                  </div>
+
+                  {/* Impact Metrics Grid */}
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="border border-border bg-cardBg rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col gap-1 shadow-sm">
+                      <span className="text-2xl sm:text-4xl font-black text-navTextHover font-headingfont">
+                        +240%
+                      </span>
+                      <span className="text-xs sm:text-sm font-semibold text-textHeading font-headingfont">
+                        Average Traffic &amp; Leads
+                      </span>
+                      <span className="text-[11px] sm:text-xs text-textDescription font-bodyfont">
+                        Compounding growth across organic search &amp; paid campaigns.
+                      </span>
+                    </div>
+
+                    <div className="border border-border bg-cardBg rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col gap-1 shadow-sm">
+                      <span className="text-2xl sm:text-4xl font-black text-navTextHover font-headingfont">
+                        3.8x
+                      </span>
+                      <span className="text-xs sm:text-sm font-semibold text-textHeading font-headingfont">
+                        Verified Client ROAS
+                      </span>
+                      <span className="text-[11px] sm:text-xs text-textDescription font-bodyfont">
+                        Predictable revenue yield for every dollar invested.
+                      </span>
+                    </div>
+
+                    <div className="border border-border bg-cardBg rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col gap-1 shadow-sm">
+                      <span className="text-2xl sm:text-4xl font-black text-navTextHover font-headingfont">
+                        &lt;1.1s
+                      </span>
+                      <span className="text-xs sm:text-sm font-semibold text-textHeading font-headingfont">
+                        Average Load Time
+                      </span>
+                      <span className="text-[11px] sm:text-xs text-textDescription font-bodyfont">
+                        95+ Google PageSpeed Core Web Vitals performance score.
+                      </span>
+                    </div>
+
+                    <div className="border border-border bg-cardBg rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col gap-1 shadow-sm">
+                      <span className="text-2xl sm:text-4xl font-black text-navTextHover font-headingfont">
+                        99.9%
+                      </span>
+                      <span className="text-xs sm:text-sm font-semibold text-textHeading font-headingfont">
+                        Uptime &amp; Delivery SLA
+                      </span>
+                      <span className="text-[11px] sm:text-xs text-textDescription font-bodyfont">
+                        Zero-downtime releases and on-time project milestones.
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Client Testimonial Card */}
+                  <div className="border border-border bg-cardBg/70 rounded-2xl p-5 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-48 h-48 bg-[#8356FB]/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div className="flex flex-col gap-3 max-w-[50rem]">
+                      <div className="flex items-center gap-1 text-[#F5A623]">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                          </svg>
+                        ))}
+                      </div>
+                      <p className="font-bodyfont text-sm sm:text-base italic text-textHeading leading-relaxed">
+                        &ldquo;Partnering with Zentrix Infotech completely redefined how our brand performs online. From technical architecture planning to launch, the delivery was spotless, and we saw a direct 3x spike in qualified customer inquiries within 30 days of release.&rdquo;
+                      </p>
+                      <div className="flex items-center gap-3 pt-1">
+                        <div className="w-10 h-10 rounded-full bg-[#8356FB]/20 border border-[#8356FB]/40 flex items-center justify-center text-navTextHover font-bold text-sm">
+                          SB
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-textHeading font-headingfont">Sawasheri Brothers</p>
+                          <p className="text-xs text-textDescription font-bodyfont">Retail &amp; E-Commerce Enterprise</p>
+                        </div>
+                      </div>
+                    </div>
+                    <Link
+                      href={service.ctaHref}
+                      className="CTA-Button whitespace-nowrap text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-md self-start sm:self-center shrink-0"
+                    >
+                      Work With Us →
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -300,7 +532,7 @@ export default function ServiceDetailTemplate({ serviceKey }) {
                           Our end-to-end service package covers every critical phase of delivery:
                         </p>
 
-                        {service.sections.whatWeDeliver.map((deliv) => (
+                        {(service.sections.whatWeDeliver || service.sections.deliverables || []).map((deliv) => (
                           <div key={deliv.id}>
                             <h3
                               id={deliv.id}
@@ -481,4 +713,3 @@ export default function ServiceDetailTemplate({ serviceKey }) {
     </div>
   );
 }
-

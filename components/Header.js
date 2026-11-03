@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { DesktopServicesDropdown, MobileServicesAccordion } from './NavServicesDropdown';
 
 export default function Header() {
   const [theme, setTheme] = useState('dark');
@@ -85,6 +86,9 @@ export default function Header() {
           className="flex flex-row justify-around items-center border border-navBorder rounded-xl text-navText text-lg gap-1 p-2 bg-[rgba(var(--nav-bg),0.3)] bg-clip-padding backdrop-filter backdrop-blur-md xxxs:hidden sm:hidden lg:text-sm lg:flex lg:p-1 xl:text-lg xl:p-2"
         >
           {navItems.map((item) => {
+            if (item.name === 'Services') {
+              return <DesktopServicesDropdown key={item.href} />;
+            }
             const active = isLinkActive(item.href);
             return (
               <Link
@@ -167,6 +171,14 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="w-full lg:hidden mt-2 p-4 bg-navBg/95 backdrop-blur-xl border border-navBorder rounded-2xl flex flex-col gap-3 shadow-2xl transition-all duration-300 animate-fadeIn">
           {navItems.map((item) => {
+            if (item.name === 'Services') {
+              return (
+                <MobileServicesAccordion
+                  key={item.href}
+                  onItemClick={() => setMobileMenuOpen(false)}
+                />
+              );
+            }
             const active = isLinkActive(item.href);
             return (
               <Link

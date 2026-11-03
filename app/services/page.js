@@ -34,13 +34,43 @@ const servicesList = [
     ],
   },
   {
-    slug: 'video-editing',
-    title: 'Video\nEditing',
+    slug: 'software-development',
+    title: 'Software\nDevelopment',
     features: [
-      'Product & promo edits',
-      'Motion graphics',
-      'Sound design & mixing',
-      'Cut per platform',
+      'Custom enterprise cloud software',
+      'High-scale microservices & APIs',
+      'Secure internal ERP/CRM tools',
+      'Automated CI/CD DevOps',
+    ],
+  },
+  {
+    slug: 'digital-marketing',
+    title: 'Digital\nMarketing',
+    features: [
+      'Full-funnel acquisition strategy',
+      'SEO & Google Search dominance',
+      'High-ROAS Meta & Google Ads',
+      'Social Media Optimization (SMO)',
+    ],
+  },
+  {
+    slug: 'political-campaign-management',
+    title: 'Political\nCampaign',
+    features: [
+      'Constituency demographic profiling',
+      'Booth worker mobile applications',
+      '24/7 Digital narrative war room',
+      'Targeted voter mobilization',
+    ],
+  },
+  {
+    slug: 'video-shoot-editing',
+    title: 'Video Shoot\n& Editing',
+    features: [
+      'On-location 4K cinema shooting',
+      'Studio lighting & audio capture',
+      'High-retention social reels',
+      'Cinema color & sound mastering',
     ],
   },
   {
@@ -83,6 +113,73 @@ const servicesFaqs = [
 ];
 
 export default function ServicesPage() {
+  const renderServiceCard = (service) => (
+    <div
+      key={service.slug}
+      className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-[#8356FB]/60"
+    >
+      {/* Visual Header linking to Service Detail */}
+      <Link
+        href={`/services/${service.slug}`}
+        className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0 cursor-pointer"
+      >
+        <img
+          alt={service.title.replace('\n', ' ')}
+          loading="lazy"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }}
+          src="/images/ServiceBGDark.webp"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3 z-10">
+          <h2 id={service.slug} className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line group-hover:text-navTextHover transition-colors duration-200">
+            {service.title}
+          </h2>
+        </div>
+      </Link>
+
+      <div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto">
+        <div className="flex flex-col gap-2.5 xs:gap-3">
+          <p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">
+            What&apos;s Included
+          </p>
+          <ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4">
+            {service.features.map((feature, idx) => (
+              <li key={idx} className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs">
+                <div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </div>
+                <span className="leading-tight">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Explore Service Action */}
+        <div className="w-full pt-1.5 xs:pt-2 mt-auto">
+          <Link
+            className="group/btn w-full block"
+            aria-label={`Explore Service — ${service.title.replace('\n', ' ')}`}
+            href={`/services/${service.slug}`}
+          >
+            <div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200">
+              <p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">
+                Explore Service
+              </p>
+              <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
       {/* Hero Corner Art & Backgrounds */}
@@ -139,144 +236,19 @@ export default function ServicesPage() {
         {/* Services Cards Grid */}
         <div className="w-full flex flex-col items-center gap-5 xl:gap-5 2xl:gap-8 mb-24 xxxs:mb-14 xxs:mb-16 xs:mb-20 sm:mb-16 lg:mb-20 xl:mb-24 2xl:mb-28">
           
-          {/* First Row of 3 Services */}
+          {/* First Row of 3 Services: Web Dev, App Dev, UI/UX */}
           <div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}>
-            {servicesList.slice(0, 3).map((service) => (
-              <div
-                key={service.slug}
-                className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-[#8356FB]/60"
-              >
-                {/* Visual Header linking to Service Detail */}
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0 cursor-pointer"
-                >
-                  <img
-                    alt={service.title.replace('\n', ' ')}
-                    loading="lazy"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }}
-                    src="/images/ServiceBGDark.webp"
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3 z-10">
-                    <h2 id={service.slug} className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line group-hover:text-navTextHover transition-colors duration-200">
-                      {service.title}
-                    </h2>
-                  </div>
-                </Link>
-
-                <div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto">
-                  <div className="flex flex-col gap-2.5 xs:gap-3">
-                    <p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">
-                      What&apos;s Included
-                    </p>
-                    <ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs">
-                          <div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true">
-                              <path d="M20 6 9 17l-5-5"></path>
-                            </svg>
-                          </div>
-                          <span className="leading-tight">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Explore Service Action */}
-                  <div className="w-full pt-1.5 xs:pt-2 mt-auto">
-                    <Link
-                      className="group/btn w-full block"
-                      aria-label={`Explore Service — ${service.title.replace('\n', ' ')}`}
-                      href={`/services/${service.slug}`}
-                    >
-                      <div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200">
-                        <p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">
-                          Explore Service
-                        </p>
-                        <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true">
-                            <path d="M5 12h14"></path>
-                            <path d="m12 5 7 7-7 7"></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {servicesList.slice(0, 3).map(renderServiceCard)}
           </div>
 
-          {/* Second Row of Services (Video Editing, Branding, MVP) */}
-          <div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0.15s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}>
-            {servicesList.slice(3, 5).map((service) => (
-              <div
-                key={service.slug}
-                className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-[#8356FB]/60"
-              >
-                {/* Visual Header linking to Service Detail */}
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="relative w-full aspect-[3/2] rounded-[12px] xs:rounded-[14px] sm:rounded-2xl sm:aspect-auto sm:h-full sm:w-1/2 sm:basis-1/2 md:aspect-[4/3] lg:aspect-[3/2] lg:w-full lg:basis-auto lg:h-auto min-h-[140px] xs:min-h-[160px] sm:min-h-[180px] flex-shrink-0 overflow-hidden flex items-center justify-center lg:flex-none lg:min-h-0 xl:min-h-0 cursor-pointer"
-                >
-                  <img
-                    alt={service.title.replace('\n', ' ')}
-                    loading="lazy"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent' }}
-                    src="/images/ServiceBGDark.webp"
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 p-3 z-10">
-                    <h2 id={service.slug} className="text-textHeading font-clashdisplay font-semibold text-[32px] leading-none text-center drop-shadow-lg xxxs:text-2xl xxs:text-3xl sm:text-3xl xs:text-4xl xl:text-4xl 2xl:text-5xl whitespace-pre-line group-hover:text-navTextHover transition-colors duration-200">
-                      {service.title}
-                    </h2>
-                  </div>
-                </Link>
+          {/* Second Row of 3 Services: Software Dev, Digital Marketing, Political Campaign */}
+          <div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0.1s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}>
+            {servicesList.slice(3, 6).map(renderServiceCard)}
+          </div>
 
-                <div className="flex flex-col justify-between gap-3.5 xs:gap-4 sm:gap-5 px-1 xs:px-1.5 pb-1 sm:pb-2 sm:w-1/2 sm:basis-1/2 flex-1 xl:gap-6 lg:w-full lg:basis-auto">
-                  <div className="flex flex-col gap-2.5 xs:gap-3">
-                    <p className="text-base xs:text-lg font-bold text-textHeading xxxs:text-sm xl:text-xl">
-                      What&apos;s Included
-                    </p>
-                    <ul className="flex flex-col gap-2.5 xs:gap-3 lg:gap-4">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-1.5 xl:gap-2 text-xs sm:text-sm lg:text-[11.5px] xl:text-[13px] 2xl:text-sm text-textDescription font-bodyfont xxxs:text-xs">
-                          <div className="flex justify-center items-center p-0.5 rounded-full bg-[#07C51A] text-white flex-shrink-0 w-3.5 h-3.5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check w-2.5 h-2.5" aria-hidden="true">
-                              <path d="M20 6 9 17l-5-5"></path>
-                            </svg>
-                          </div>
-                          <span className="leading-tight">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Explore Service Action */}
-                  <div className="w-full pt-1.5 xs:pt-2 mt-auto">
-                    <Link
-                      className="group/btn w-full block"
-                      aria-label={`Explore Service — ${service.title.replace('\n', ' ')}`}
-                      href={`/services/${service.slug}`}
-                    >
-                      <div className="h-10 xs:h-11 sm:h-12 w-full flex items-center justify-between p-1.5 xs:p-1.5 sm:p-2 pl-3 xs:pl-4 sm:pl-5 rounded-lg xs:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200">
-                        <p className="font-semibold text-xs xs:text-sm sm:text-base lg:text-lg mb-0.5 sm:mb-1">
-                          Explore Service
-                        </p>
-                        <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-md xs:rounded-lg bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3.5 h-3.5 xs:w-4 xs:h-4 -rotate-45" aria-hidden="true">
-                            <path d="M5 12h14"></path>
-                            <path d="m12 5 7 7-7 7"></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* Third Row of Services (Video Shoot & Editing, Branding, MVP) */}
+          <div className="scroll-reveal sl-service-cards w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-5 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:gap-5 xl:max-w-[1200px] 2xl:max-w-[1440px] 2xl:gap-8" style={{ '--reveal-delay': '0.2s', '--reveal-y': '30px', '--reveal-duration': '0.7s' }}>
+            {servicesList.slice(6, 8).map(renderServiceCard)}
 
             {/* MVP Service Card */}
             <div className="border border-border bg-cardBg group relative h-full rounded-[16px] xs:rounded-[18px] sm:rounded-3xl p-2.5 xs:p-3 sm:p-4 xl:p-5 flex flex-col overflow-hidden transition-all duration-300 gap-3 xs:gap-4 sm:gap-6 sm:flex-row lg:flex-col shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-[#8356FB]/60">
@@ -339,11 +311,10 @@ export default function ServicesPage() {
 
         {/* Interactive FAQ Section */}
         <SubpageFAQ
-          badgeText="Services FAQ"
-          headingWord1="Frequently Asked"
-          headingWord2="Questions"
-          description="Scope, cost, timelines and what happens after launch — the questions we are asked before starting a project."
           faqs={servicesFaqs}
+          badgeText="SERVICES FAQ"
+          titlePrefix="Frequently Asked"
+          titleHighlight="Questions"
         />
       </div>
     </div>
