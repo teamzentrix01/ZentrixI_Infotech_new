@@ -1,64 +1,17 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import { ALL_POSTS } from '@/lib/blogsData';
 
-const ALL_POSTS = [
-  {
-    slug: 'sawasheri-direct-kirana-online',
-    title: 'Taking a 1972 Kirana Business Online',
-    description: 'Sawasheri Brothers has sold groceries in Belagavi since 1972. Here is how we put their shop online without turning it into a marketplace — and why we deployed a product instead of building from scratch.',
-    date: 'Tue, Aug 11, 2026',
-    category: 'Case Studies',
-    readTime: '8 min read',
-    cover: '/assets/blog/cover-sawasheri-direct.svg',
-    featured: true
-  },
-  {
-    slug: 'structured-data-that-survives',
-    title: 'Structured Data That Survives Google’s Rules',
-    description: 'Most schema markup we inherit has the same three problems: invented values, duplicate entities, and claims Google actively penalises. Here is how to audit yours — starting with the one that risks a manual action.',
-    date: 'Wed, Jul 29, 2026',
-    category: 'Engineering',
-    readTime: '7 min read',
-    cover: '/assets/blog/cover-structured-data.svg'
-  },
-  {
-    slug: 'cutting-image-payload-85-percent',
-    title: 'Cutting a Page’s Image Payload by 85%',
-    description: 'We took 1.8 MB of images down to under 320 KB. The interesting part was not the compression — it was discovering that the best-performing format made one image visibly worse.',
-    date: 'Fri, Jul 10, 2026',
-    category: 'Engineering',
-    readTime: '7 min read',
-    cover: '/assets/blog/cover-image-payload.svg'
-  },
-  {
-    slug: 'website-cost-india-2026',
-    title: 'What a Website Actually Costs in India in 2026',
-    description: 'Real ranges, what moves the number, and the questions to ask before accepting any quote — including the costs that show up after launch.',
-    date: 'Wed, Jun 24, 2026',
-    category: 'Guides',
-    readTime: '6 min read',
-    cover: '/assets/blog/cover-website-cost.svg'
-  },
-  {
-    slug: 'web-app-or-mobile-app',
-    title: 'Web App or Mobile App: Which Do You Actually Need?',
-    description: 'The honest answer for most businesses is a web app first. Here is how to tell when that is wrong — and what a mobile app really commits you to.',
-    date: 'Fri, Jun 05, 2026',
-    category: 'Guides',
-    readTime: '6 min read',
-    cover: '/assets/blog/cover-web-vs-app.svg'
-  }
-];
-
-const CATEGORIES = ['All', 'Guides', 'Engineering', 'Case Studies'];
+const CATEGORIES = ['All', 'Business & Growth', 'Digital Marketing', 'Web & Tech'];
+const POSTS_PER_PAGE = 12;
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const featuredPost = ALL_POSTS[0];
-
+  // Filter posts based on category and search query
   const filteredPosts = useMemo(() => {
     return ALL_POSTS.filter(post => {
       const matchesCategory = selectedCategory === 'All' || post.category.toLowerCase() === selectedCategory.toLowerCase();
@@ -70,16 +23,34 @@ export default function BlogPage() {
     });
   }, [selectedCategory, searchQuery]);
 
-  // Determine if featured post should display in featured slot
-  const showFeatured = (selectedCategory === 'All' || selectedCategory === 'Case Studies') && 
-    (searchQuery.trim() === '' || 
-     featuredPost.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-     featuredPost.description.toLowerCase().includes(searchQuery.toLowerCase()));
+  // Reset to page 1 whenever search query or category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, searchQuery]);
 
-  // Other posts excluding featured when featured is shown
-  const gridPosts = showFeatured 
-    ? filteredPosts.filter(p => p.slug !== featuredPost.slug)
-    : filteredPosts;
+  // Total pages
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE) || 1;
+
+  // Slice posts for current page
+  const currentPosts = useMemo(() => {
+    const start = (currentPage - 1) * POSTS_PER_PAGE;
+    return filteredPosts.slice(start, start + POSTS_PER_PAGE);
+  }, [filteredPosts, currentPage]);
+
+  // Featured post is shown only on page 1 when no search query is active
+  const showFeatured = currentPage === 1 && searchQuery.trim() === '' && selectedCategory === 'All';
+  const featuredPost = ALL_POSTS[0];
+
+  const handlePageChange = (pageNum) => {
+    setCurrentPage(pageNum);
+    // Smooth scroll back to top of blog list
+    const el = document.getElementById('blog-posts-top');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 400, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="flex flex-col items-center w-full font-headingfont bg-background text-textHeading relative transition-all duration-200">
@@ -115,13 +86,13 @@ export default function BlogPage() {
                     Zentrix Infotech <span className="bg-headingGradient text-transparent bg-clip-text font-semibold">Blog</span>
                   </h1>
                   <p className="font-bodyfont text-textDescription text-xs sm:text-lg">
-                    The latest engineering stories, product updates, AI breakthroughs, and design insights.
+                    The latest engineering stories, business growth tactics, SEO guides, and AI breakthroughs.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Featured Post Card (if applicable) */}
+            {/* Featured Post Card (Page 1 only) */}
             {showFeatured && (
               <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
                 <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
@@ -133,11 +104,11 @@ export default function BlogPage() {
                         href={`/blog/${featuredPost.slug}`}
                       >
                         <div className="border border-border bg-cardBg flex-shrink-0 w-full md:w-[48%] rounded-xl sm:rounded-2xl p-1 sm:p-1.5 transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(131,86,251,0.2)] flex flex-col">
-                          <div className="w-full h-full min-h-[200px] sm:min-h-[220px] aspect-[2/1] md:aspect-auto rounded-lg sm:rounded-xl overflow-hidden relative bg-cardBg">
+                          <div className="w-full h-full min-h-[200px] sm:min-h-[220px] aspect-[16/9] md:aspect-auto rounded-lg sm:rounded-xl overflow-hidden relative bg-cardBg">
                             <img 
                               alt={featuredPost.title}
                               decoding="async" 
-                              className="object-cover w-full h-full" 
+                              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
                               style={{ position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0' }} 
                               src={featuredPost.cover}
                             />
@@ -157,6 +128,14 @@ export default function BlogPage() {
                           <p className="font-bodyfont text-textDescription text-xs sm:text-base lg:text-lg leading-relaxed line-clamp-2 md:line-clamp-4">
                             {featuredPost.description}
                           </p>
+                          <div className="pt-2 flex items-center justify-between font-bodyfont">
+                            <span className="text-xs font-semibold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-border text-textDescription bg-cardBg transition-all shadow-sm">
+                              {featuredPost.category}
+                            </span>
+                            <span className="text-xs text-textDescription font-medium">
+                              {featuredPost.readTime}
+                            </span>
+                          </div>
                         </div>
                       </Link>
                     </div>
@@ -166,12 +145,12 @@ export default function BlogPage() {
             )}
 
             {/* Search Input Row */}
-            <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
+            <div id="blog-posts-top" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
               <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-0 py-2.5 sm:px-6 sm:py-4">
                 <div className="relative flex items-center w-full font-bodyfont">
                   <input 
                     type="text" 
-                    placeholder="Search the Zentrix Infotech blog…" 
+                    placeholder="" 
                     className="spotlight-line-cardbg w-full h-10 sm:h-12 pl-10 sm:pl-11 pr-4 rounded-xl border bg-cardBg text-textHeading placeholder:text-textDescription focus:outline-none focus:ring-2 focus:ring-navTextHover transition-all text-xs sm:text-base font-bodyfont" 
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -207,29 +186,34 @@ export default function BlogPage() {
             {/* Categories Row */}
             <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
               <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-0 py-2 sm:px-6 sm:py-3">
-                <div className="categories-scroll flex flex-row items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden py-1 font-bodyfont">
-                  {CATEGORIES.map(category => {
-                    const isActive = selectedCategory.toLowerCase() === category.toLowerCase();
-                    return (
-                      <button 
-                        key={category}
-                        onClick={() => setSelectedCategory(category)}
-                        className={`transition-all duration-200 rounded-full py-1 sm:py-1.5 px-3 sm:px-4 text-[11px] sm:text-sm font-semibold whitespace-nowrap border ${
-                          isActive 
-                            ? 'bg-navBtnBg border-transparent text-white shadow-md' 
-                            : 'border-border text-textDescription hover:text-textHeading hover:bg-cardBg'
-                        }`}
-                      >
-                        {category}
-                      </button>
-                    );
-                  })}
+                <div className="categories-scroll flex flex-row items-center justify-between gap-2 overflow-x-auto no-scrollbar py-1 font-bodyfont">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    {CATEGORIES.map(category => {
+                      const isActive = selectedCategory.toLowerCase() === category.toLowerCase();
+                      return (
+                        <button 
+                          key={category}
+                          onClick={() => setSelectedCategory(category)}
+                          className={`transition-all duration-200 rounded-full py-1 sm:py-1.5 px-3 sm:px-4 text-[11px] sm:text-sm font-semibold whitespace-nowrap border ${
+                            isActive 
+                              ? 'bg-navBtnBg border-transparent text-white shadow-md' 
+                              : 'border-border text-textDescription hover:text-textHeading hover:bg-cardBg'
+                          }`}
+                        >
+                          {category}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <span className="text-xs text-textDescription font-medium whitespace-nowrap hidden sm:inline-block">
+                    Showing {filteredPosts.length} Articles
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* Grid of Articles */}
-            {gridPosts.length === 0 ? (
+            {currentPosts.length === 0 ? (
               <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b py-16">
                 <div className="spotlight-line w-10/12 text-center text-textDescription py-8 font-bodyfont">
                   No blog articles found matching &quot;{searchQuery || selectedCategory}&quot;.
@@ -239,7 +223,7 @@ export default function BlogPage() {
               <div className="w-full flex flex-col">
                 {/* Mobile Single Column (< sm) */}
                 <div className="flex sm:hidden flex-col w-full">
-                  {gridPosts.map((post) => (
+                  {currentPosts.map((post) => (
                     <div key={post.slug} className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
                       <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
                         <div className="PostCard group relative list-none h-full bg-background overflow-hidden transition-all duration-300 flex flex-col">
@@ -273,7 +257,7 @@ export default function BlogPage() {
                   <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
                     <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
                       <div className="grid grid-cols-2 w-full">
-                        {gridPosts.map((post, idx) => (
+                        {currentPosts.map((post, idx) => (
                           <div key={post.slug} className={`h-full spotlight-line ${idx % 2 === 0 ? 'border-r' : ''} ${idx >= 2 ? 'border-t' : ''}`}>
                             <div className="PostCard group relative list-none h-full bg-background overflow-hidden transition-all duration-300 flex flex-col">
                               <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#8356FB]/25 via-[#946CFF]/12 to-transparent pointer-events-none"></div>
@@ -308,7 +292,7 @@ export default function BlogPage() {
                   <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
                     <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x p-0">
                       <div className="grid grid-cols-4 w-full">
-                        {gridPosts.map((post, idx) => (
+                        {currentPosts.map((post, idx) => (
                           <div key={post.slug} className={`h-full spotlight-line ${idx % 4 !== 3 ? 'border-r' : ''} ${idx >= 4 ? 'border-t' : ''}`}>
                             <div className="PostCard group relative list-none h-full bg-background overflow-hidden transition-all duration-300 flex flex-col">
                               <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#8356FB]/25 via-[#946CFF]/12 to-transparent pointer-events-none"></div>
@@ -338,6 +322,59 @@ export default function BlogPage() {
                   </div>
                 </div>
 
+              </div>
+            )}
+
+            {/* Pagination Controls (1, 2, 3...) */}
+            {totalPages > 1 && (
+              <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b py-8 sm:py-12">
+                <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-bodyfont">
+                  
+                  {/* Prev Button */}
+                  <button
+                    disabled={currentPage === 1}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-cardBg text-textHeading hover:border-navTextHover hover:text-navTextHover transition-all disabled:opacity-30 disabled:pointer-events-none text-xs sm:text-sm font-semibold shadow-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m15 18-6-6 6-6"/>
+                    </svg>
+                    Previous
+                  </button>
+
+                  {/* Number Buttons: 1, 2, 3... */}
+                  <div className="flex items-center gap-2">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => {
+                      const isActive = currentPage === num;
+                      return (
+                        <button
+                          key={num}
+                          onClick={() => handlePageChange(num)}
+                          className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center font-bold text-sm sm:text-base transition-all border ${
+                            isActive
+                              ? 'bg-navBtnBg text-white border-transparent shadow-lg shadow-[#8356FB]/25 scale-105'
+                              : 'bg-cardBg border-border text-textDescription hover:text-textHeading hover:border-navTextHover'
+                          }`}
+                        >
+                          {num}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Next Button */}
+                  <button
+                    disabled={currentPage === totalPages}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-cardBg text-textHeading hover:border-navTextHover hover:text-navTextHover transition-all disabled:opacity-30 disabled:pointer-events-none text-xs sm:text-sm font-semibold shadow-sm"
+                  >
+                    Next
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                  </button>
+
+                </div>
               </div>
             )}
 
