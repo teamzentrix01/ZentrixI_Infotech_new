@@ -22,12 +22,12 @@ export default function TopProjectsSlider() {
           {sliderImages.map((img, i) => (
             <div
               key={`track1-${i}`}
-              className="relative shrink-0 w-[210px] h-[145px] xs:w-[240px] xs:h-[165px] sm:w-[270px] sm:h-[185px] md:w-[300px] md:h-[205px] lg:w-[330px] lg:h-[225px] xl:w-[360px] xl:h-[245px] 2xl:w-[400px] 2xl:h-[270px]"
+              className="relative shrink-0 w-[240px] aspect-[16/9] xs:w-[270px] sm:w-[320px] md:w-[360px] lg:w-[400px] xl:w-[440px] 2xl:w-[480px] rounded-2xl sm:rounded-3xl border-2 sm:border-[3px] lg:border-4 border-border overflow-hidden bg-[#0A0A0A] flex items-center justify-center shadow-lg"
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover rounded-2xl sm:rounded-3xl border-2 sm:border-[3px] lg:border-4 border-border"
+                className="w-full h-full object-contain p-1 sm:p-1.5 transition-transform duration-300 hover:scale-[1.02]"
                 loading="lazy"
               />
             </div>
@@ -35,12 +35,12 @@ export default function TopProjectsSlider() {
           {sliderImages.map((img, i) => (
             <div
               key={`track2-${i}`}
-              className="relative shrink-0 w-[210px] h-[145px] xs:w-[240px] xs:h-[165px] sm:w-[270px] sm:h-[185px] md:w-[300px] md:h-[205px] lg:w-[330px] lg:h-[225px] xl:w-[360px] xl:h-[245px] 2xl:w-[400px] 2xl:h-[270px]"
+              className="relative shrink-0 w-[240px] aspect-[16/9] xs:w-[270px] sm:w-[320px] md:w-[360px] lg:w-[400px] xl:w-[440px] 2xl:w-[480px] rounded-2xl sm:rounded-3xl border-2 sm:border-[3px] lg:border-4 border-border overflow-hidden bg-[#0A0A0A] flex items-center justify-center shadow-lg"
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover rounded-2xl sm:rounded-3xl border-2 sm:border-[3px] lg:border-4 border-border"
+                className="w-full h-full object-contain p-1 sm:p-1.5 transition-transform duration-300 hover:scale-[1.02]"
                 loading="lazy"
               />
             </div>
