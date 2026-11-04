@@ -104,11 +104,10 @@ body {
   z-index: 100000;
   justify-content: center;
   align-items: center;
-  animation: 0.4s ease-out 1.6s forwards introOverlayOut;
   display: flex;
   position: fixed;
   inset: 0;
-  background-color: var(--intro-bg);
+  background-color: transparent;
   pointer-events: none;
 }
 
@@ -116,16 +115,27 @@ body {
   background-color: var(--intro-bg);
   position: absolute;
   inset: 0;
+  will-change: opacity;
 }
 
 .intro-logo {
-  will-change: transform;
+  will-change: transform, opacity;
+  transform-origin: 0% 50%;
   color: #fff;
   width: min(85vw, 440px);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Hide navbar logo while intro is running, reveal when intro lands */
+html:has(.intro-overlay:not(.intro-landed)) #nav-logo-container {
+  opacity: 0 !important;
+}
+
+#nav-logo-container {
+  transition: opacity 0.35s ease;
 }
 
 .light .intro-logo {
@@ -253,6 +263,15 @@ html:has(.intro-overlay) {
 
 .border-border {
   border-color: rgb(var(--border));
+}
+
+@media (min-width: 1024px) {
+  header .navbar {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: transparent !important;
+    border: none !important;
+  }
 }
 
 

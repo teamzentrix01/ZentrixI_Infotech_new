@@ -203,7 +203,7 @@ export default function ServicesPage() {
 
       <div className="w-full relative z-10 flex flex-col items-center">
         {/* Header Section */}
-        <div className="w-full flex flex-col items-center mt-36 mb-16 xxxs:mt-20 xxxs:mb-8 xxs:mt-24 xxs:mb-10 sm:mt-28 sm:mb-12 lg:mt-32 xl:mt-36 xl:mb-16 2xl:mt-40 z-10">
+        <div className="w-full flex flex-col items-center mt-6 mb-12 xxxs:mt-3 xxxs:mb-6 xxs:mt-4 xxs:mb-8 sm:mt-6 sm:mb-10 lg:mt-8 xl:mt-10 xl:mb-14 2xl:mt-12 z-10">
           <div className="w-10/12 max-w-[860px] flex flex-col items-start text-left sm:items-center sm:text-center gap-3.5 sm:gap-4 xxxs:w-11/12 xxxs:gap-2.5">
             <div className="reveal-up" style={{ '--reveal-delay': '0s', '--reveal-y': '25px', '--reveal-duration': '0.65s' }}>
               <div className="badge-glow self-start sm:self-auto flex flex-row justify-center gap-1.5 items-center py-1.5 px-3.5 sm:py-2 sm:px-4 bg-badgeBG rounded-full text-badgeText border border-badgeBorder text-xs sm:text-sm lg:text-[12px] xl:text-sm 2xl:text-[16px] 2xl:px-6 2xl:py-4">

@@ -54,12 +54,11 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full sticky top-0 z-50 transition-all duration-200 bg-[rgba(var(--background),0.75)] dark:bg-[rgba(13,13,13,0.75)] backdrop-blur-md border-b border-navBorder/40">
-      <div className="w-10/12 mx-auto flex flex-col justify-between items-center py-3 xxxs:w-11/12 xxxs:py-2.5 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px]">
-      <div className="navbar w-full flex flex-row justify-between xxxs:bg-navBg/50 xxxs:bg-clip-padding xxxs:backdrop-filter xxxs:backdrop-blur-md xxxs:border xxxs:border-navBorder xxxs:rounded-xl xxxs:p-3 xxs:p-3 sm:p-3 sm:bg-navBg/50 sm:bg-clip-padding sm:backdrop-filter sm:backdrop-blur-md sm:border sm:border-navBorder sm:rounded-xl md:p-3 lg:p-0 lg:bg-transparent lg:border-none">
+    <header className="w-10/12 mx-auto flex flex-col justify-between items-center sticky top-10 z-50 transition-all duration-200 xxxs:w-11/12 xxxs:top-5 xxs:w-11/12 xxs:gap-3 xxs:top-6 xs:top-8 xs:w-10/12 sm:w-11/12 sm:top-9 md:w-10/12 2xl:max-w-[1440px]">
+      <div className="navbar w-full flex flex-row justify-between xxxs:bg-navBg/50 xxxs:bg-clip-padding xxxs:backdrop-filter xxxs:backdrop-blur-md xxxs:border xxxs:border-navBorder xxxs:rounded-xl xxxs:p-3 xxs:p-3 sm:p-3 sm:bg-navBg/50 sm:bg-clip-padding sm:backdrop-filter sm:backdrop-blur-md sm:border sm:border-navBorder sm:rounded-xl md:p-3 lg:p-0 lg:bg-transparent lg:border-none lg:backdrop-blur-none lg:[backdrop-filter:none]">
         {/* Zentrix Logo */}
         <div className="flex justify-center items-center">
-          <Link aria-label="Go to homepage" href="/" className="flex items-center">
+          <Link id="nav-logo-container" aria-label="Go to homepage" href="/" className="flex items-center transition-opacity duration-300">
             {/* Dark mode logo */}
             <img
               id="nav-logo-slot-dark"
@@ -207,7 +206,6 @@ export default function Header() {
           </div>
         </div>
       )}
-      </div>
     </header>
   );
 }

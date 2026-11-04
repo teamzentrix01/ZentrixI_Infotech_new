@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { servicesData } from '@/lib/servicesData';
 
-export default function ServiceDetailTemplate({ serviceKey }) {
+export default function ServiceDetailTemplate({ serviceKey, showPreviousWork = true, showImpact = true }) {
   const service = servicesData[serviceKey];
   const [activeSection, setActiveSection] = useState('overview');
 
@@ -11,6 +11,10 @@ export default function ServiceDetailTemplate({ serviceKey }) {
   const otherServices = Array.from(
     new Map(Object.values(servicesData).map((s) => [s.slug, s])).values()
   ).filter((s) => s.slug !== service?.slug);
+
+  const isAppDev = serviceKey === 'app-development' || service?.slug === 'app-development';
+  const displayPreviousWork = showPreviousWork && !isAppDev && service?.hidePreviousWork !== true;
+  const displayImpact = showImpact && !isAppDev && service?.hideImpact !== true;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +65,7 @@ export default function ServiceDetailTemplate({ serviceKey }) {
       />
 
       <div className="w-full relative z-10 flex flex-col items-center">
-        <div className="w-full flex flex-col items-center mt-28 xxxs:mt-24 xxs:mt-24 xs:mt-28 sm:mt-32 md:mt-32 lg:mt-36 xl:mt-40 mb-20 z-10">
+        <div className="w-full flex flex-col items-center mt-0 mb-12 sm:mb-16 z-10">
           <div className="w-full flex flex-col items-center relative">
             
             {/* Top Back Row */}
@@ -204,7 +208,8 @@ export default function ServiceDetailTemplate({ serviceKey }) {
             </div>
 
             {/* Section 1: Our Previous Work */}
-            <div id="previous-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
+            {displayPreviousWork && (
+              <div id="previous-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
               <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-12">
                 <div className="w-full flex flex-col gap-6">
                   <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -317,8 +322,9 @@ export default function ServiceDetailTemplate({ serviceKey }) {
               </div>
             </div>
 
-            {/* Section 2: Impact of Work on Clients */}
-            <div id="impact-of-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
+            )}
+            {displayImpact && (
+              <div id="impact-of-work" className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
               <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-12">
                 <div className="w-full flex flex-col gap-8">
                   <div>
@@ -418,6 +424,7 @@ export default function ServiceDetailTemplate({ serviceKey }) {
                 </div>
               </div>
             </div>
+            )}
 
             {/* Content & Table of Contents Section */}
             <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">

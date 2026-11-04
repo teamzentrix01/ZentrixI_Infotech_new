@@ -1,25 +1,76 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function LogoIntro() {
   const [show, setShow] = useState(true);
+  const logoRef = useRef(null);
+  const backdropRef = useRef(null);
+  const overlayRef = useRef(null);
 
   useEffect(() => {
-    // Unmount overlay after CSS animation completes (2 seconds total)
-    const timer = setTimeout(() => {
-      setShow(false);
-    }, 2050);
+    // 1. Wait for stroke draw & fill animations to complete in center (~1050ms)
+    const flyTimer = setTimeout(() => {
+      if (!logoRef.current || !backdropRef.current) return;
 
-    return () => clearTimeout(timer);
+      const isDark = document.documentElement.classList.contains('dark') || !document.documentElement.classList.contains('light');
+      const targetImg = document.getElementById(isDark ? 'nav-logo-slot-dark' : 'nav-logo-slot-light');
+      const target = (targetImg && targetImg.getBoundingClientRect().width > 0)
+        ? targetImg
+        : document.getElementById('nav-logo-container');
+
+      if (target && logoRef.current) {
+        const targetRect = target.getBoundingClientRect();
+        const introRect = logoRef.current.getBoundingClientRect();
+
+        if (targetRect.width > 0 && targetRect.height > 0) {
+          // Align left edge to left edge, and center vertically
+          const deltaX = targetRect.left - introRect.left;
+          const deltaY = (targetRect.top + targetRect.height / 2) - (introRect.top + introRect.height / 2);
+          const scale = (targetRect.width * 0.96) / introRect.width;
+
+          // Animate backdrop fade out (revealing page & navbar behind)
+          backdropRef.current.style.transition = 'opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1)';
+          backdropRef.current.style.opacity = '0';
+
+          // Fly logo to navbar slot with smooth cubic-bezier curve
+          logoRef.current.style.transformOrigin = '0% 50%';
+          logoRef.current.style.transition = 'transform 0.82s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease 0.72s';
+          logoRef.current.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0) scale(${scale})`;
+          logoRef.current.style.opacity = '0';
+        }
+      }
+    }, 1050);
+
+    // 2. Reveal navbar logo when flying logo arrives (~1800ms)
+    const landTimer = setTimeout(() => {
+      const navLogo = document.getElementById('nav-logo-container');
+      if (navLogo) {
+        navLogo.style.opacity = '1';
+      }
+      if (overlayRef.current) {
+        overlayRef.current.classList.add('intro-landed');
+      }
+    }, 1800);
+
+    // 3. Unmount overlay completely after flight completes (~2100ms)
+    const unmountTimer = setTimeout(() => {
+      setShow(false);
+    }, 2100);
+
+    return () => {
+      clearTimeout(flyTimer);
+      clearTimeout(landTimer);
+      clearTimeout(unmountTimer);
+    };
   }, []);
 
   if (!show) return null;
 
   return (
-    <div id="intro-overlay" className="intro-overlay" aria-hidden="true">
-      <div id="intro-backdrop" className="intro-backdrop"></div>
+    <div id="intro-overlay" ref={overlayRef} className="intro-overlay" aria-hidden="true">
+      <div id="intro-backdrop" ref={backdropRef} className="intro-backdrop"></div>
       
-      <div id="intro-logo" className="intro-logo">
+      <div id="intro-logo" ref={logoRef} className="intro-logo">
         {/* Dark Mode SVG Variant (White text + Cyan/Turquoise Gradients) */}
         <svg
           viewBox="0 0 240 32"
