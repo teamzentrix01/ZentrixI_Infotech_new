@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { ALL_PROJECTS } from '@/lib/projectsData';
+import ProjectCard from '@/components/projects/ProjectCard';
 
 export default function PortfolioSection() {
   // Show top 6 featured projects on the home page
@@ -42,87 +43,11 @@ export default function PortfolioSection() {
         </div>
       </div>
 
-      {/* Projects Grid */}
+      {/* Projects Grid with Hover Scroll Animation */}
       <div className="w-full flex flex-col items-center gap-6 xl:gap-8">
         <div className="w-10/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 xxxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 xl:max-w-[1280px] 2xl:max-w-[1440px]">
           {featuredProjects.map((project) => (
-            <div
-              key={project.slug}
-              className="border border-border bg-cardBg group relative h-full rounded-2xl sm:rounded-3xl p-3 sm:p-4 flex flex-col justify-between overflow-hidden transition-all duration-300 gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-none hover:border-navTextHover hover:shadow-[0_0_25px_rgba(131,86,251,0.2)]"
-            >
-              {/* Image Preview with Tag */}
-              <div className="relative w-full aspect-[16/10] rounded-xl sm:rounded-2xl flex-shrink-0 overflow-hidden flex items-center justify-center bg-[#0d0d0d] border border-border/60">
-                {project.cover ? (
-                  <img
-                    alt={`${project.title} — Portfolio project by Zentrix Infotech`}
-                    src={project.cover}
-                    className="object-contain w-full h-full p-1.5 transition-transform duration-500 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center p-4 text-center bg-gradient-to-br from-[#8356FB]/10 to-transparent">
-                    <span className="text-xl font-bold font-headingfont text-textHeading">{project.title}</span>
-                  </div>
-                )}
-                <div className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-md sm:rounded-lg bg-white/95 dark:bg-[#1a1a1a]/95 text-[#8356FB] text-[10px] sm:text-xs font-extrabold tracking-wide shadow-md z-10 flex items-center gap-1.5 border border-[#8356FB]/25 backdrop-blur-md">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8356FB]"></span>
-                  <span className="truncate max-w-[170px]">{project.category}</span>
-                </div>
-              </div>
-
-              {/* Text and Actions */}
-              <div className="flex flex-col justify-between gap-3 px-1 pt-1 flex-1">
-                <Link
-                  className="flex flex-col gap-1 group/case"
-                  aria-label={`Read the ${project.title} case study`}
-                  href={`/projects/${project.slug}`}
-                >
-                  <h3 className="text-lg sm:text-xl font-bold font-headingfont text-textHeading capitalize group-hover/case:text-navTextHover transition-colors duration-200">
-                    {project.title}
-                  </h3>
-                  <p className="font-bodyfont text-textDescription text-xs sm:text-sm leading-relaxed line-clamp-2">
-                    {project.description}
-                  </p>
-                </Link>
-
-                <div className="w-full pt-1 mt-auto flex items-center gap-2">
-                  <Link
-                    className="group/btn flex-1 min-w-0 block"
-                    aria-label={`Read the ${project.title} case study`}
-                    href={`/projects/${project.slug}`}
-                  >
-                    <div className="h-9 sm:h-10 w-full flex items-center justify-between p-1.5 pl-3.5 rounded-lg sm:rounded-xl bg-serviceBtnBg border border-border hover:border-[#8356FB] hover:bg-[#8356FB] text-textHeading hover:text-white transition-all duration-200">
-                      <p className="font-semibold text-xs sm:text-sm mb-0.5 truncate font-headingfont">
-                        View Case Study
-                      </p>
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-navTextHover flex items-center justify-center text-white group-hover/btn:bg-white group-hover/btn:text-navTextHover transition-all duration-200 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-3 h-3 -rotate-45">
-                          <path d="M5 12h14"></path>
-                          <path d="m12 5 7 7-7 7"></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Open the live ${project.title} site in a new tab`}
-                      title={`Visit ${project.title}`}
-                      className="h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 flex items-center justify-center rounded-lg sm:rounded-xl bg-serviceBtnBg border border-border text-textHeading hover:border-[#8356FB] hover:bg-[#8356FB] hover:text-white transition-all duration-200"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link w-3.5 h-3.5">
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14 21 3"></path>
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      </svg>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
 

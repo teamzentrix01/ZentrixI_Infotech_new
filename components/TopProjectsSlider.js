@@ -8,7 +8,9 @@ const sliderImages = [
   { src: '/images/slider/vasterior.webp', alt: 'Vasterior luxury interior & architectural design platform designed by Zentrix Infotech' },
   { src: '/images/slider/kairvi_resort.webp', alt: 'Kairvi Fort Resort regal heritage destination wedding estate designed by Zentrix Infotech' },
   { src: '/images/slider/herbsfox.webp', alt: 'HerbsFox organic Ayurvedic spices & herbs marketplace designed by Zentrix Infotech' },
+  { src: '/images/slider/balprada_ashram.webp', alt: 'Balprada Ayurvedic Hospital & Research Center wellness website designed by Zentrix Infotech' },
   { src: '/images/slider/oracle_eye_hospital.webp', alt: 'Oracle Eye Hospital super specialty laser & retina care website designed by Zentrix Infotech' },
+  { src: '/images/slider/pritha_healthcare.webp', alt: 'Pritha Health Care rehabilitation and medical welfare website designed by Zentrix Infotech' },
   { src: '/images/slider/alluring_glimpses.webp', alt: 'Alluring Glimpses spatial architecture and interior design portfolio designed by Zentrix Infotech' },
   { src: '/images/slider/kdedu.webp', alt: 'Kamla Devi Group of Institutions (KDEDU) campus admissions portal designed by Zentrix Infotech' },
 ];
@@ -22,12 +24,12 @@ export default function TopProjectsSlider() {
           {sliderImages.map((img, i) => (
             <div
               key={`track1-${i}`}
-              className="relative shrink-0 w-[240px] aspect-[16/9] xs:w-[270px] sm:w-[320px] md:w-[360px] lg:w-[400px] xl:w-[440px] 2xl:w-[480px] rounded-2xl sm:rounded-3xl border-2 sm:border-[3px] lg:border-4 border-border overflow-hidden bg-[#0A0A0A] flex items-center justify-center shadow-lg"
+              className="relative shrink-0 w-[240px] aspect-[16/9] xs:w-[270px] sm:w-[320px] md:w-[360px] lg:w-[400px] xl:w-[440px] 2xl:w-[480px] rounded-2xl sm:rounded-3xl border-2 sm:border-[3px] lg:border-4 border-border overflow-hidden bg-[#0A0A0A] flex items-center justify-center shadow-lg group"
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-contain p-1 sm:p-1.5 transition-transform duration-300 hover:scale-[1.02]"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
               />
             </div>
@@ -35,12 +37,12 @@ export default function TopProjectsSlider() {
           {sliderImages.map((img, i) => (
             <div
               key={`track2-${i}`}
-              className="relative shrink-0 w-[240px] aspect-[16/9] xs:w-[270px] sm:w-[320px] md:w-[360px] lg:w-[400px] xl:w-[440px] 2xl:w-[480px] rounded-2xl sm:rounded-3xl border-2 sm:border-[3px] lg:border-4 border-border overflow-hidden bg-[#0A0A0A] flex items-center justify-center shadow-lg"
+              className="relative shrink-0 w-[240px] aspect-[16/9] xs:w-[270px] sm:w-[320px] md:w-[360px] lg:w-[400px] xl:w-[440px] 2xl:w-[480px] rounded-2xl sm:rounded-3xl border-2 sm:border-[3px] lg:border-4 border-border overflow-hidden bg-[#0A0A0A] flex items-center justify-center shadow-lg group"
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-contain p-1 sm:p-1.5 transition-transform duration-300 hover:scale-[1.02]"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
               />
             </div>

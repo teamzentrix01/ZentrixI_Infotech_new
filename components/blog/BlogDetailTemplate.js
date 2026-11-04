@@ -1,32 +1,15 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { ALL_POSTS } from '@/lib/blogsData';
+import BlogEnquiryForm from '@/components/blog/BlogEnquiryForm';
+import BlogContactCard from '@/components/blog/BlogContactCard';
 
 export default function BlogDetailTemplate({ post }) {
-  const [activeSection, setActiveSection] = useState(post.toc[0]?.id || '');
   const [copied, setCopied] = useState(false);
 
   // Other articles for "More Articles" bottom section
   const otherPosts = ALL_POSTS.filter((p) => p.slug !== post.slug).slice(0, 4);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + 200;
-      for (let i = post.toc.length - 1; i >= 0; i--) {
-        const item = post.toc[i];
-        const el = document.getElementById(item.id);
-        if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(item.id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [post]);
 
   const copyUrl = () => {
     if (typeof window !== 'undefined') {
@@ -130,65 +113,13 @@ export default function BlogDetailTemplate({ post }) {
               </div>
             </div>
 
-            {/* Content & Table of Contents Section */}
+            {/* Content & Sidebar Section */}
             <div className="blueprint-row spotlight-line w-full flex justify-center relative border-b">
               <div className="spotlight-line w-10/12 xxxs:w-11/12 xxs:w-11/12 xs:w-10/12 sm:w-11/12 md:w-10/12 2xl:max-w-[1440px] shrink-0 sm:border-x px-4 sm:px-8 py-8 sm:py-14">
-                <div className="w-full flex flex-col lg:flex-row items-start gap-10 lg:gap-14 xl:gap-20">
+                <div className="w-full flex flex-col lg:flex-row items-start gap-10 lg:gap-12 xl:gap-14 relative">
                   
-                  {/* Sticky Table of Contents (Desktop) */}
-                  <aside className="hidden lg:block w-60 xl:w-72 shrink-0 sticky top-32 self-start pr-4">
-                    <nav aria-label="Table of Contents" className="w-full">
-                      <p className="font-headingfont text-xl sm:text-2xl font-bold text-textHeading mb-4 tracking-tight">
-                        Table of Content
-                      </p>
-                      <ul className="space-y-1 spotlight-line border-l pl-0 list-none m-0 p-0 font-bodyfont text-sm">
-                        {post.toc.map((item) => {
-                          const isActive = activeSection === item.id;
-                          return (
-                            <li key={item.id} className="relative">
-                              {isActive && (
-                                <span className="absolute -left-[1px] top-0 bottom-0 w-[2px] bg-navTextHover rounded-full"></span>
-                              )}
-                              <a
-                                href={`#${item.id}`}
-                                className={`block py-1.5 transition-colors duration-200 leading-snug pl-4 ${
-                                  isActive
-                                    ? 'text-navTextHover font-semibold'
-                                    : 'text-textDescription hover:text-textHeading'
-                                }`}
-                              >
-                                {item.title}
-                              </a>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </nav>
-                  </aside>
-
-                  {/* Main Article Body */}
-                  <div className="flex-1 min-w-0 w-full pr-2 sm:pr-6 lg:pr-12 xl:pr-16">
-                    {/* Mobile Table of Contents */}
-                    <div className="lg:hidden mb-8 p-4 rounded-xl border border-border bg-cardBg/50">
-                      <nav aria-label="Table of Contents" className="w-full">
-                        <p className="font-headingfont text-xl sm:text-2xl font-bold text-textHeading mb-4 tracking-tight">
-                          Table of Content
-                        </p>
-                        <ul className="space-y-1 spotlight-line border-l pl-0 list-none m-0 p-0 font-bodyfont text-sm">
-                          {post.toc.map((item) => (
-                            <li key={item.id} className="relative">
-                              <a
-                                href={`#${item.id}`}
-                                className="block py-1.5 transition-colors duration-200 leading-snug pl-4 text-textDescription hover:text-textHeading"
-                              >
-                                {item.title}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </nav>
-                    </div>
-
+                  {/* Left: Main Article Body */}
+                  <div className="flex-1 min-w-0 w-full pr-0 lg:pr-4">
                     <article className="w-full font-bodyfont">
                       <div className="prose prose-lg dark:prose-invert max-w-none text-textHeading font-bodyfont">
                         {/* Introduction */}
@@ -213,9 +144,11 @@ export default function BlogDetailTemplate({ post }) {
                             {section.content.map((item, cIdx) => {
                               if (item.type === 'paragraph') {
                                 return (
-                                  <p key={cIdx} className="font-bodyfont text-base sm:text-lg leading-relaxed text-textDescription mb-6">
-                                    {item.text}
-                                  </p>
+                                  <p 
+                                    key={cIdx} 
+                                    className="font-bodyfont text-base sm:text-lg leading-relaxed text-textDescription mb-6"
+                                    dangerouslySetInnerHTML={{ __html: item.text }}
+                                  />
                                 );
                               }
                               if (item.type === 'subheading') {
@@ -237,6 +170,9 @@ export default function BlogDetailTemplate({ post }) {
                                 );
                               }
                               if (item.type === 'callout') {
+                                if (item.text.includes('Zentrix Infotech') && item.text.includes('12/11, Buddhi Vihar')) {
+                                  return <BlogContactCard key={cIdx} postTitle={post.title} />;
+                                }
                                 return (
                                   <div
                                     key={cIdx}
@@ -246,9 +182,10 @@ export default function BlogDetailTemplate({ post }) {
                                         : 'bg-amber-500/10 border-amber-500/30 text-amber-900 dark:text-amber-100'
                                     }`}
                                   >
-                                    <p className="m-0 font-bodyfont text-base sm:text-lg font-medium leading-relaxed">
-                                      {item.text}
-                                    </p>
+                                    <p 
+                                      className="m-0 font-bodyfont text-base sm:text-lg font-medium leading-relaxed"
+                                      dangerouslySetInnerHTML={{ __html: item.text }}
+                                    />
                                   </div>
                                 );
                               }
@@ -322,9 +259,18 @@ export default function BlogDetailTemplate({ post }) {
                             </div>
                           </div>
                         )}
+
+                        {/* Standard Consultation & Contact Card on Every Blog */}
+                        <BlogContactCard postTitle={post.title} />
                       </div>
                     </article>
                   </div>
+
+                  {/* Right: Sticky Enquiry Form */}
+                  <aside className="w-full lg:w-[380px] xl:w-[420px] shrink-0 lg:sticky lg:top-28 self-start">
+                    <BlogEnquiryForm />
+                  </aside>
+
                 </div>
               </div>
             </div>
