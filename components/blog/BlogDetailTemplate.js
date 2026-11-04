@@ -119,7 +119,7 @@ export default function BlogDetailTemplate({ post }) {
                 <div className="w-full flex flex-col lg:flex-row items-start gap-10 lg:gap-12 xl:gap-14 relative">
                   
                   {/* Left: Main Article Body */}
-                  <div className="flex-1 min-w-0 w-full pr-0 lg:pr-4">
+                  <div className="flex-1 min-w-0 w-full pr-0 lg:pr-2 xl:pr-4">
                     <article className="w-full font-bodyfont">
                       <div className="prose prose-lg dark:prose-invert max-w-none text-textHeading font-bodyfont">
                         {/* Introduction */}
@@ -171,7 +171,8 @@ export default function BlogDetailTemplate({ post }) {
                               }
                               if (item.type === 'callout') {
                                 if (item.text.includes('Zentrix Infotech') && item.text.includes('12/11, Buddhi Vihar')) {
-                                  return <BlogContactCard key={cIdx} postTitle={post.title} />;
+                                  // Skip inline rendering as BlogContactCard is rendered at the end of the post
+                                  return null;
                                 }
                                 return (
                                   <div
@@ -267,7 +268,7 @@ export default function BlogDetailTemplate({ post }) {
                   </div>
 
                   {/* Right: Sticky Enquiry Form */}
-                  <aside className="w-full lg:w-[380px] xl:w-[420px] shrink-0 lg:sticky lg:top-28 self-start">
+                  <aside className="w-full lg:w-[440px] xl:w-[480px] 2xl:w-[500px] shrink-0 lg:sticky lg:top-24 self-start">
                     <BlogEnquiryForm />
                   </aside>
 
